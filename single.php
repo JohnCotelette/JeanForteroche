@@ -18,10 +18,10 @@
 		{
 		?>
 			<div>
-				<h2>Title: <?= htmlspecialchars($article["title"]); ?></h2>
-				<p>Auteur : <?= htmlspecialchars($article["author"]); ?></p>
-				<p>Date: <?= htmlspecialchars($article["dateMessage"]); ?></p>
-				<p>Contenu: <?= htmlspecialchars($article["content"]); ?></p>
+				<h2>Title: <?= htmlspecialchars($article->title); ?></h2>
+				<p>Auteur : <?= htmlspecialchars($article->author); ?></p>
+				<p>Date: <?= htmlspecialchars($article->dateMessage); ?></p>
+				<p>Contenu: <?= htmlspecialchars($article->content); ?></p>
 			</div>
 		<?php
 		}

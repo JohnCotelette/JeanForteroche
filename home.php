@@ -19,10 +19,10 @@
 		?>
 			<div>
 
-				<h2><a href="single.php?articleID=<?=htmlspecialchars($article["ID"]);?>">Title: <?= htmlspecialchars($article["title"]); ?></a></h2>
-				<p>Auteur : <?= htmlspecialchars($article["author"]); ?></p>
-				<p>Date: <?= htmlspecialchars($article["dateMessage"]); ?></p>
-				<p>Contenu: <?= htmlspecialchars($article["content"]); ?></p>
+				<h2><a href="single.php?articleID=<?=htmlspecialchars($article->ID);?>">Title: <?= htmlspecialchars($article->title); ?></a></h2>
+				<p>Auteur : <?= htmlspecialchars($article->author); ?></p>
+				<p>Date: <?= htmlspecialchars($article->dateMessage); ?></p>
+				<p>Contenu: <?= htmlspecialchars($article->content); ?></p>
 			</div>
 		<?php
 		}
