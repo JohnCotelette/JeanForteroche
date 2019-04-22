@@ -1,0 +1,442 @@
+/* ===>GLOBAL SETTINGS<=== */
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Fonts/GothamMedium.eot');
+    src: url('Fonts/GothamMedium.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/GothamMedium.woff2') format('woff2'),
+        url('Fonts/GothamMedium.woff') format('woff'),
+        url('Fonts/GothamMedium.ttf') format('truetype'),
+        url('Fonts/GothamMedium.svg#GothamMedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face 
+{
+    font-family: 'Cormorant SC';
+    src: url('Fonts/CormorantSC-Bold.eot');
+    src: url('Fonts/CormorantSC-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/CormorantSC-Bold.woff2') format('woff2'),
+        url('Fonts/CormorantSC-Bold.woff') format('woff'),
+        url('Fonts/CormorantSC-Bold.ttf') format('truetype'),
+        url('Fonts/CormorantSC-Bold.svg#CormorantSC-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face 
+{
+    font-family: 'Montserrat';
+    src: url('Fonts/Montserrat-Regular.eot');
+    src: url('Fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/Montserrat-Regular.woff2') format('woff2'),
+        url('Fonts/Montserrat-Regular.woff') format('woff'),
+        url('Fonts/Montserrat-Regular.ttf') format('truetype'),
+        url('Fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face 
+{
+    font-family: 'Montserrat';
+    src: url('Fonts/Montserrat-Light.eot');
+    src: url('Fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/Montserrat-Light.woff2') format('woff2'),
+        url('Fonts/Montserrat-Light.woff') format('woff'),
+        url('Fonts/Montserrat-Light.ttf') format('truetype'),
+        url('Fonts/Montserrat-Light.svg#Montserrat-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Global */
+
+html, body
+{
+	margin: 0;
+	padding: 0;
+    scroll-behavior: smooth;
+}
+
+body
+{
+	font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 300;
+    color: rgb(51, 51, 51);
+    background-color: rgb(239, 240, 242);
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+header, footer
+{
+    height: 100px;
+    width: 86%;
+    padding-right: 7%;
+    padding-left: 7%;
+    background-color: rgb(251, 251, 251);
+    display: flex;
+    text-transform: uppercase;
+}
+
+#pageContent
+{
+    width: 86%;
+    margin: auto;
+    margin-top: 100px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ===>SPECIFIC SETTINGS<=== */
+
+/* Header */
+
+header
+{
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+}
+
+#blogTitle
+{
+    display: flex;
+}
+
+header h1
+{
+    display: inline-block;
+    margin: auto;
+    font-family: 'Gotham';
+    font-size: 27px;
+}
+
+header nav
+{
+    width: 35%;
+    min-width: 500px;
+    align-self: flex-end;
+}
+
+header ul
+{
+    padding: 0;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+header li
+{
+    margin: auto;
+    cursor: pointer;
+    text-decoration: none;
+    list-style: none;
+}
+
+#sign 
+{
+    font-weight: 300;
+}
+
+#sign:hover
+{
+    color: red;
+}
+
+figure
+{
+    background-color: rgb(230, 230, 230);
+}
+
+/* Content */
+
+#showMorePosts
+{
+    background-color: rgb(239, 240, 242);
+    border: 1px solid grey;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 4px;
+    padding-right: 16px;
+    padding-left: 16px;
+    color: grey;
+    display: block;
+    margin: auto;
+    margin-bottom: 25px;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+}
+
+#showMorePosts:hover
+{
+    color: white;
+    background-color: #435962;
+}
+
+#lastPostBlog
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgb(251, 251, 251);
+}
+
+#lastPostBlog figure
+{
+    width: 48%;
+    height: 400px;
+    margin: 0;
+}
+
+#rightCLastPost
+{
+    width: 52%;
+    padding: 25px;
+    padding-left: 35px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.postsBlog
+{
+    margin-bottom: 30px;
+    width: 49%;
+}
+
+.postsBlog figure 
+{
+    width: 100%;
+    margin: 0;
+    height: 230px;
+}
+
+#more
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    animation : fadeInTop 1s ease;
+    -webkit-animation: fadeInTop 1s ease;
+}
+
+.rightC
+{
+    padding: 25px;
+    padding-top: 2px;
+}
+
+.datePosts
+{
+    color: rgba(51, 51, 51, 0.5);
+    text-transform: uppercase;
+    width: 40%;
+    text-align: right;
+}
+
+h3, .datePosts
+{
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+#dateLastPost
+{
+    font-size: 14.5px;
+    text-align: left;
+}
+
+#titleLastPost
+{
+    font-size: 1.2em;
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Cormorant SC';
+}
+
+.blocTitlePost
+{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.blocTitlePost h3
+{
+    width: 70%;
+    font-family: 'Cormorant SC';
+    font-size: 0.9em;
+}
+
+.chapCount
+{
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+#chapCountLastPost
+{
+    font-size: 34px;
+}
+
+header li:hover, #legalsLink:hover
+{
+    color: #435962;
+}
+
+h2
+{
+    font-size: 17px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 15px;
+    margin-left: 0;
+}
+
+#lastPostBlog, .postsBlog
+{
+    background-color: rgb(251, 251, 251);
+}
+
+#last
+{
+    margin-bottom: 70px;
+    animation : apparition 1.4s ease;
+    -webkit-animation: apparition 1.4s ease;
+}
+
+.contentPosts
+{
+    font-size: 0.8em;
+    overflow: hidden;
+    width: 80%;
+}
+
+#contentLastPost
+{
+    font-size: 16px;
+    width: 85%;
+}
+
+.showMoreContent
+{
+    background-color: #435962;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    padding: 0.45em;
+    padding-right: 2.3em;
+    padding-left: 2.3em;
+    margin-top: 0.5em;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+}
+
+.showMoreContent:hover
+{
+    background-color: black;
+    color: white;
+}
+
+#showMoreContentLP
+{
+    font-size: 1.1em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    letter-spacing: 0.15em;
+}
+
+.pForInput
+{
+    margin: 0;
+}
+
+/* Footer */
+
+#footerAuthor
+{
+    font-family: 'Gotham';
+    font-size: 22px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#legalsLink
+{
+    margin: auto;
+    margin-right: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Animations */
+
+@keyframes apparition 
+{
+    0% 
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes apparition
+{
+    0% 
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInTop 
+{
+    0% 
+    {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes fadeInTop
+{
+    0% 
+    {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ===>RESPONSIVE SETTINGS<=== */
