@@ -15,7 +15,7 @@ class Article
 		return $result;
 	}
 
-	public function getOneArticle()
+	public function getOneArticle($articleID)
 	{
 		$db = new Database();
 		$connection = $db->getConnection();
