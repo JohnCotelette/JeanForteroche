@@ -10,6 +10,7 @@ class ComposerStaticInitf4801a250d5693df86e5213422e29065
         'A' => 
         array (
             'App\\Src\\' => 8,
+            'App\\Config\\' => 11,
         ),
     );
 
@@ -17,6 +18,10 @@ class ComposerStaticInitf4801a250d5693df86e5213422e29065
         'App\\Src\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Src',
+        ),
+        'App\\Config\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Config',
         ),
     );
 

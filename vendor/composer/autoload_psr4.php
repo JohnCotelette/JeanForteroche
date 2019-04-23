@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Src\\' => array($baseDir . '/Src'),
+    'App\\Config\\' => array($baseDir . '/Config'),
 );
