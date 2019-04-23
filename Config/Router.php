@@ -1,16 +1,22 @@
 <?php 
 namespace App\Config;
 use App\Src\Controllers\FrontController;
+use App\Src\Controllers\BackController;
+use App\Src\Controllers\ErrorController;
 use Exception;
 
 
 class Router 
 {
 	private $frontController;
+	private $backController;
+	private $errorController;
 
 	public function __construct()
 	{
 		$this->frontController = new FrontController();
+		$this->backController = new BackController();
+		$this->errorController = new ErrorController();
 	}
 
 	public function run()
@@ -25,7 +31,7 @@ class Router
 				} 
 				else
 				{
-					echo "Page Inconnue !";
+					$this->errorController->errorNotFound();
 				}
 			} 
 			else
@@ -36,7 +42,7 @@ class Router
 
 		catch(Exception $e)
 		{
-			echo "Erreur, le paramètre n'existe pas !";
+			$this->errorController->errorServer();
 		}
 	}
 }
