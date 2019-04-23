@@ -1,6 +1,5 @@
 <?php 
-require "../Src/Managers/DataBaseManager.php";
-require "../Src/Managers/ArticleManager.php";
+require "../vendor/autoload.php";
 
 use App\Src\Managers\ArticleManager;
 ?>

@@ -1,7 +1,5 @@
 <?php
-require "../Src/Managers/DataBaseManager.php";
-require "../Src/Managers/ArticleManager.php";
-require "../Src/Managers/CommentManager.php";
+require "../vendor/autoload.php";
 
 use App\Src\Managers\ArticleManager;
 use App\Src\Managers\CommentManager;
