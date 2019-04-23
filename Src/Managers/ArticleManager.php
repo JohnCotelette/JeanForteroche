@@ -1,6 +1,9 @@
 <?php 
 
-class Article extends DataBase
+namespace App\Src\Managers;
+
+
+class ArticleManager extends DataBaseManager
 {
 	public function getArticles()
 	{

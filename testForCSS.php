@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-		<link rel="stylesheet" href="Css/main.css" />
+		<link rel="stylesheet" href="Public/Css/main.css" />
 		<title>Blog de JeanForteroche</title>
 		<meta name="description" content="Retrouvez sur cette page les derniers épisodes de 'Billet simple pour l'Alaska', le dernier roman de JeanForteroche. Page PHP." />
 	</head>

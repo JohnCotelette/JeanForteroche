@@ -1,3 +1,11 @@
+<?php 
+require "../Src/Managers/DataBaseManager.php";
+require "../Src/Managers/ArticleManager.php";
+
+use App\Src\Managers\ArticleManager;
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -8,10 +16,7 @@
 
 	<body>
 		<?php 
-		require "DataBase.php";
-		require "Article.php";
-
-		$article = new Article;
+		$article = new ArticleManager;
 		$articles = $article->getArticles();
 
 		while($article = $articles->fetch())

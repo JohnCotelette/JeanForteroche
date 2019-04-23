@@ -8,7 +8,13 @@
  * 4. "createRequest()" : for specials requests (prepare/execute) / "protected" for inheritance
  */
 
-abstract class DataBase
+namespace App\Src\Managers;
+
+use PDO;
+use Exception;
+
+
+abstract class DataBaseManager
 {
 	const DB_HOST = "mysql:host=localhost;dbname=blog;charset=utf8";
 	const DB_USER = "root";

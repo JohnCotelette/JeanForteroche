@@ -1,3 +1,13 @@
+<?php
+require "../Src/Managers/DataBaseManager.php";
+require "../Src/Managers/ArticleManager.php";
+require "../Src/Managers/CommentManager.php";
+
+use App\Src\Managers\ArticleManager;
+use App\Src\Managers\CommentManager;
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -8,11 +18,7 @@
 
 	<body>
 		<?php 
-		require "DataBase.php";
-		require "Article.php";
-		require "Comment.php";
-
-		$article = new Article;
+		$article = new ArticleManager;
 		$articles = $article->getOneArticle($_GET["articleID"]);
 
 		while($article = $articles->fetch())
@@ -34,7 +40,7 @@
 		</div>
 
 		<?php
-		$comment = new Comment;
+		$comment = new CommentManager;
 		$comments = $comment->getCommentsArticle($_GET["articleID"]);
 
 		while($comment = $comments->fetch())

@@ -1,6 +1,9 @@
 <?php
 
-class Comment extends DataBase
+namespace App\Src\Managers;
+
+
+class CommentManager extends DataBaseManager
 {
 	public function getCommentsArticle($articleID) 
 	{
