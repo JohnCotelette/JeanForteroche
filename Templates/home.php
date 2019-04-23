@@ -1,6 +1,4 @@
 <?php 
-require "../vendor/autoload.php";
-
 use App\Src\Managers\ArticleManager;
 ?>
 
@@ -23,7 +21,7 @@ use App\Src\Managers\ArticleManager;
 		?>
 			<div>
 
-				<h2><a href="single.php?articleID=<?=htmlspecialchars($article->ID);?>">TITRE: <?= htmlspecialchars($article->title); ?></a></h2>
+				<h2><a href="../Public/index.php?route=article&articleID=<?=htmlspecialchars($article->ID);?>">TITRE: <?= htmlspecialchars($article->title); ?></a></h2>
 				<p>AUTEUR: <?= htmlspecialchars($article->author); ?></p>
 				<p>DATE: <?= htmlspecialchars($article->dateMessage); ?></p>
 				<p>CONTENU: <?= htmlspecialchars($article->content); ?></p>

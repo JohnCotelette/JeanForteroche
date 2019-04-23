@@ -1,6 +1,4 @@
 <?php
-require "../vendor/autoload.php";
-
 use App\Src\Managers\ArticleManager;
 use App\Src\Managers\CommentManager;
 ?>
@@ -34,7 +32,7 @@ use App\Src\Managers\CommentManager;
 		?>
 
 		<div>
-			<a href="home.php">Retour à la page d'accueil</a>
+			<a href="../Public/index.php">Retour à la page d'accueil</a>
 		</div>
 
 		<?php
