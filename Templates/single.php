@@ -1,9 +1,3 @@
-<?php
-use App\Src\Managers\ArticleManager;
-use App\Src\Managers\CommentManager;
-?>
-
-
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -14,11 +8,7 @@ use App\Src\Managers\CommentManager;
 
 	<body>
 		<?php 
-		$article = new ArticleManager;
-		$articles = $article->getOneArticle($_GET["articleID"]);
-
-		while($article = $articles->fetch())
-		{
+		$article = $articles->fetch()
 		?>
 			<div>
 				<h2>TITRE: <?= htmlspecialchars($article->title); ?></h2>
@@ -26,19 +16,15 @@ use App\Src\Managers\CommentManager;
 				<p>DATE: <?= htmlspecialchars($article->dateMessage); ?></p>
 				<p>CONTENU: <?= htmlspecialchars($article->content); ?></p>
 			</div>
+
 		<?php
-		}
 		$articles->closeCursor();
 		?>
-
 		<div>
 			<a href="../Public/index.php">Retour à la page d'accueil</a>
 		</div>
 
 		<?php
-		$comment = new CommentManager;
-		$comments = $comment->getCommentsArticle($_GET["articleID"]);
-
 		while($comment = $comments->fetch())
 		{
 		?>
@@ -48,6 +34,7 @@ use App\Src\Managers\CommentManager;
 					<?= htmlspecialchars($comment->content);?>
 				</p>
 			</div>
+
 		<?php
 		}
 		$comments->closeCursor();

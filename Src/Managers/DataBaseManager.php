@@ -1,5 +1,4 @@
 <?php 
-
 /**
  * An abstract class to manage the connection to the database
  * 1. "$connection": to store a previous connection and avoid duplicates
@@ -9,7 +8,6 @@
  */
 
 namespace App\Src\Managers;
-
 use PDO;
 use Exception;
 

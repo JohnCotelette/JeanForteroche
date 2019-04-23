@@ -1,10 +1,3 @@
-<?php 
-
-use App\Src\Managers\ArticleManager;
-
-?>
-
-
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -15,9 +8,6 @@ use App\Src\Managers\ArticleManager;
 
 	<body>
 		<?php 
-		$article = new ArticleManager;
-		$articles = $article->getArticles();
-
 		while($article = $articles->fetch())
 		{
 		?>
@@ -28,6 +18,7 @@ use App\Src\Managers\ArticleManager;
 				<p>DATE: <?= htmlspecialchars($article->dateMessage); ?></p>
 				<p>CONTENU: <?= htmlspecialchars($article->content); ?></p>
 			</div>
+
 		<?php
 		}
 		$articles->closeCursor();

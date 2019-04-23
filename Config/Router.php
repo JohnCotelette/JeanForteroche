@@ -1,7 +1,6 @@
 <?php 
-
 namespace App\Config;
-
+use App\Src\Controllers\FrontController;
 use Exception;
 
 
@@ -15,7 +14,8 @@ class Router
 			{
 				if($_GET["route"] === "article") 
 				{
-					require "../Templates/single.php";
+					$frontController = new FrontController();
+					$frontController->article($_GET["articleID"]);
 				} 
 				else
 				{
@@ -24,7 +24,8 @@ class Router
 			} 
 			else
 			{
-				require "../Templates/home.php";
+				$frontController = new FrontController();
+				$frontController->home();
 			}
 		}
 
