@@ -6,20 +6,25 @@ use App\Src\Managers\CommentManager;
 
 class FrontController 
 {
+	private $articleManager;
+	private $commentManager;
+
+	public function __construct()
+	{
+		$this->articleManager = new ArticleManager();
+		$this->commentManager = new CommentManager();
+	}
+
 	public function home()
 	{
-		$article = new ArticleManager;
-		$articles = $article->getArticles();
-
+		$articles = $this->articleManager->getArticles();
 		require "../Templates/home.php";
 	}
 
 	public function article($articleID)
 	{
-		$article = new ArticleManager;
-		$articles = $article->getOneArticle($articleID);
-		$comment = new CommentManager;
-		$comments = $comment->getCommentsArticle($articleID);
+		$articles = $this->articleManager->getOneArticle($articleID);
+		$comments = $this->commentManager->getCommentsArticle($articleID);
 
 		require "../Templates/single.php";
 	}

@@ -6,6 +6,13 @@ use Exception;
 
 class Router 
 {
+	private $frontController;
+
+	public function __construct()
+	{
+		$this->frontController = new FrontController();
+	}
+
 	public function run()
 	{
 		try
@@ -14,8 +21,7 @@ class Router
 			{
 				if($_GET["route"] === "article") 
 				{
-					$frontController = new FrontController();
-					$frontController->article($_GET["articleID"]);
+					$this->frontController->article($_GET["articleID"]);
 				} 
 				else
 				{
@@ -24,8 +30,7 @@ class Router
 			} 
 			else
 			{
-				$frontController = new FrontController();
-				$frontController->home();
+				$this->frontController->home();
 			}
 		}
 
