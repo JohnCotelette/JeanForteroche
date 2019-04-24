@@ -7,37 +7,30 @@
 	</head>
 
 	<body>
-		<?php 
-		$article = $articles->fetch()
-		?>
 			<div>
-				<h2>TITRE: <?= htmlspecialchars($article->title); ?></h2>
-				<p>AUTEUR: <?= htmlspecialchars($article->author); ?></p>
-				<p>DATE: <?= htmlspecialchars($article->dateMessage); ?></p>
-				<p>CONTENU: <?= htmlspecialchars($article->content); ?></p>
+				<h2>TITRE: <?= htmlspecialchars($article->getTitle()); ?></h2>
+				<p>AUTEUR: <?= htmlspecialchars($article->getAuthor()); ?></p>
+				<p>DATE: <?= htmlspecialchars($article->getDatePost()); ?></p>
+				<p>CONTENU: <?= htmlspecialchars($article->getContent()); ?></p>
 			</div>
 
-		<?php
-		$articles->closeCursor();
-		?>
 		<div>
 			<a href="../Public/index.php">Retour à la page d'accueil</a>
 		</div>
 
 		<?php
-		while($comment = $comments->fetch())
+		forEach($comments as $comment)
 		{
 		?>
-			<div>
-				<p>
-					AJOUTE PAR <?= htmlspecialchars($comment->author);?>, LE <?= htmlspecialchars($comment->dateComment);?><br />
-					<?= htmlspecialchars($comment->content);?>
-				</p>
-			</div>
+		<div>
+			<p>
+				AJOUTE PAR <?= htmlspecialchars($comment->getAuthor());?>, LE <?= htmlspecialchars($comment->getDateComment());?><br />
+				<?= htmlspecialchars($comment->getContent());?>
+			</p>
+		</div>
 
 		<?php
 		}
-		$comments->closeCursor();
 		?>
 	</body>
 </html>

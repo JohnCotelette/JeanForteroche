@@ -1,6 +1,7 @@
 <?php 
 namespace App\Src\Controllers;
 
+
 class ErrorController
 {
 	public function errorNotFound()

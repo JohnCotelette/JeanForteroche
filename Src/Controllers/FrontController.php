@@ -23,7 +23,7 @@ class FrontController
 
 	public function article($articleID)
 	{
-		$articles = $this->articleManager->getOneArticle($articleID);
+		$article = $this->articleManager->getOneArticle($articleID);
 		$comments = $this->commentManager->getCommentsArticle($articleID);
 
 		require "../Templates/single.php";
