@@ -1,15 +1,16 @@
 /* ===>GLOBAL SETTINGS<=== */
 
 /* Fonts */
+/* ----------------------------------------*/
 
 @font-face {
     font-family: 'Gotham';
-    src: url('Fonts/GothamMedium.eot');
-    src: url('Fonts/GothamMedium.eot?#iefix') format('embedded-opentype'),
-        url('Fonts/GothamMedium.woff2') format('woff2'),
-        url('Fonts/GothamMedium.woff') format('woff'),
-        url('Fonts/GothamMedium.ttf') format('truetype'),
-        url('Fonts/GothamMedium.svg#GothamMedium') format('svg');
+    src: url('fonts/GothamMedium.eot');
+    src: url('fonts/GothamMedium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/GothamMedium.woff2') format('woff2'),
+        url('fonts/GothamMedium.woff') format('woff'),
+        url('fonts/GothamMedium.ttf') format('truetype'),
+        url('fonts/GothamMedium.svg#GothamMedium') format('svg');
     font-weight: 500;
     font-style: normal;
 }
@@ -17,12 +18,12 @@
 @font-face 
 {
     font-family: 'Cormorant SC';
-    src: url('Fonts/CormorantSC-Bold.eot');
-    src: url('Fonts/CormorantSC-Bold.eot?#iefix') format('embedded-opentype'),
-        url('Fonts/CormorantSC-Bold.woff2') format('woff2'),
-        url('Fonts/CormorantSC-Bold.woff') format('woff'),
-        url('Fonts/CormorantSC-Bold.ttf') format('truetype'),
-        url('Fonts/CormorantSC-Bold.svg#CormorantSC-Bold') format('svg');
+    src: url('fonts/CormorantSC-Bold.eot');
+    src: url('fonts/CormorantSC-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/CormorantSC-Bold.woff2') format('woff2'),
+        url('fonts/CormorantSC-Bold.woff') format('woff'),
+        url('fonts/CormorantSC-Bold.ttf') format('truetype'),
+        url('fonts/CormorantSC-Bold.svg#CormorantSC-Bold') format('svg');
     font-weight: bold;
     font-style: normal;
 }
@@ -30,12 +31,12 @@
 @font-face 
 {
     font-family: 'Montserrat';
-    src: url('Fonts/Montserrat-Regular.eot');
-    src: url('Fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
-        url('Fonts/Montserrat-Regular.woff2') format('woff2'),
-        url('Fonts/Montserrat-Regular.woff') format('woff'),
-        url('Fonts/Montserrat-Regular.ttf') format('truetype'),
-        url('Fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+    src: url('fonts/Montserrat-Regular.eot');
+    src: url('fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Montserrat-Regular.woff2') format('woff2'),
+        url('fonts/Montserrat-Regular.woff') format('woff'),
+        url('fonts/Montserrat-Regular.ttf') format('truetype'),
+        url('fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -43,17 +44,18 @@
 @font-face 
 {
     font-family: 'Montserrat';
-    src: url('Fonts/Montserrat-Light.eot');
-    src: url('Fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
-        url('Fonts/Montserrat-Light.woff2') format('woff2'),
-        url('Fonts/Montserrat-Light.woff') format('woff'),
-        url('Fonts/Montserrat-Light.ttf') format('truetype'),
-        url('Fonts/Montserrat-Light.svg#Montserrat-Light') format('svg');
+    src: url('fonts/Montserrat-Light.eot');
+    src: url('fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Montserrat-Light.woff2') format('woff2'),
+        url('fonts/Montserrat-Light.woff') format('woff'),
+        url('fonts/Montserrat-Light.ttf') format('truetype'),
+        url('fonts/Montserrat-Light.svg#Montserrat-Light') format('svg');
     font-weight: 300;
     font-style: normal;
 }
 
 /* Global */
+/* ----------------------------------------*/
 
 html, body
 {
@@ -68,6 +70,7 @@ body
     font-weight: 300;
     color: rgb(51, 51, 51);
     background-color: rgb(239, 240, 242);
+    overflow: hidden;
 }
 
 a
@@ -79,9 +82,9 @@ a
 header, footer
 {
     height: 100px;
-    width: 86%;
-    padding-right: 7%;
-    padding-left: 7%;
+    width: 82%;
+    padding-right: 9%;
+    padding-left: 9%;
     background-color: rgb(251, 251, 251);
     display: flex;
     text-transform: uppercase;
@@ -89,7 +92,7 @@ header, footer
 
 #pageContent
 {
-    width: 86%;
+    width: 78%;
     margin: auto;
     margin-top: 100px;
     padding-top: 30px;
@@ -100,12 +103,14 @@ header, footer
 /* ===>SPECIFIC SETTINGS<=== */
 
 /* Header */
+/* ----------------------------------------*/
 
 header
 {
     justify-content: space-between;
     position: fixed;
     top: 0;
+    z-index: 2;
 }
 
 #blogTitle
@@ -118,7 +123,7 @@ header h1
     display: inline-block;
     margin: auto;
     font-family: 'Gotham';
-    font-size: 27px;
+    font-size: 1.7em;
 }
 
 header nav
@@ -135,7 +140,7 @@ header ul
     height: 55px;
     display: flex;
     font-weight: normal;
-    font-size: 15px;
+    font-size: 0.97em;
 }
 
 header li
@@ -156,18 +161,21 @@ header li
     color: red;
 }
 
-figure
+.articlesPicture img
 {
     background-color: rgb(230, 230, 230);
+    width: 100%;
+    height: 100%;
 }
 
 /* Content */
+/* ----------------------------------------*/
 
 #showMorePosts
 {
     background-color: rgb(239, 240, 242);
     border: 1px solid grey;
-    font-size: 15px;
+    font-size: 1em;
     text-transform: uppercase;
     padding: 4px;
     padding-right: 16px;
@@ -197,24 +205,18 @@ figure
 #lastPostBlog figure
 {
     width: 48%;
-    height: 400px;
+    height: auto;
     margin: 0;
 }
 
 #rightCLastPost
 {
     width: 52%;
-    padding: 25px;
-    padding-left: 35px;
+    padding-left: 45px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     margin: auto;
-}
-
-.postsBlog
-{
-    margin-bottom: 30px;
-    width: 49%;
 }
 
 .postsBlog figure 
@@ -229,14 +231,14 @@ figure
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    animation : fadeInTop 1s ease;
-    -webkit-animation: fadeInTop 1s ease;
 }
 
 .rightC
 {
     padding: 25px;
-    padding-top: 2px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 5px;
 }
 
 .datePosts
@@ -255,7 +257,7 @@ h3, .datePosts
 
 #dateLastPost
 {
-    font-size: 14.5px;
+    font-size: 1em;
     text-align: left;
 }
 
@@ -282,15 +284,16 @@ h3, .datePosts
 
 .chapCount
 {
+    font-family: "Cormorant SC";
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 1.1em;
     margin-bottom: 0;
     margin-top: 10px;
 }
 
 #chapCountLastPost
 {
-    font-size: 34px;
+    font-size: 2.3em;
 }
 
 header li:hover, #legalsLink:hover
@@ -300,7 +303,7 @@ header li:hover, #legalsLink:hover
 
 h2
 {
-    font-size: 17px;
+    font-size: 1.1em;
     font-weight: normal;
     text-transform: uppercase;
     margin: 15px;
@@ -310,25 +313,34 @@ h2
 #lastPostBlog, .postsBlog
 {
     background-color: rgb(251, 251, 251);
+    animation : apparition 1.4s ease;
+    -webkit-animation: apparition 1.4s ease;
+}
+
+.postsBlog
+{
+    margin-bottom: 40px;
+    width: 49%;
+    animation : fadeInTop 1s ease;
+    -webkit-animation: fadeInTop 1s ease;
 }
 
 #last
 {
     margin-bottom: 70px;
-    animation : apparition 1.4s ease;
-    -webkit-animation: apparition 1.4s ease;
 }
 
 .contentPosts
 {
-    font-size: 0.8em;
+    font-size: 0.87em;
     overflow: hidden;
     width: 80%;
+    line-height: 1.5em;
 }
 
 #contentLastPost
 {
-    font-size: 16px;
+    font-size: 1em;
     width: 85%;
 }
 
@@ -342,7 +354,8 @@ h2
     padding: 0.45em;
     padding-right: 2.3em;
     padding-left: 2.3em;
-    margin-top: 0.5em;
+    margin-top: 1em;
+    margin-bottom: 0.7em;
     letter-spacing: 0.15em;
     cursor: pointer;
 }
@@ -366,18 +379,40 @@ h2
     margin: 0;
 }
 
+.fa-times-circle
+{
+    font-size: 2.4em;
+    color: white;
+    position: absolute;
+    right: 4%;
+    top: 12%;
+    z-index: 3;
+}
+
+#exitMobileMenu
+{
+    display: none;
+}
+
+#hamburger
+{
+    display: none;
+}
+
 /* Footer */
+/* ----------------------------------------*/
 
 #footerAuthor
 {
     font-family: 'Gotham';
-    font-size: 22px;
+    font-size: 1.4em;
     margin-top: auto;
     margin-bottom: auto;
 }
 
 #legalsLink
 {
+    font-size: 1em;
     margin: auto;
     margin-right: 0;
     font-weight: normal;
@@ -385,6 +420,7 @@ h2
 }
 
 /* Animations */
+/* ----------------------------------------*/
 
 @keyframes apparition 
 {
@@ -438,5 +474,534 @@ h2
     }
 }
 
+@keyframes fadeInLeft
+{
+    0%
+    {
+        width: 0;
+    }
+
+    100%
+    {
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes moveBack
+{
+    0%
+    {
+        top: -225px;
+    }
+
+    100%
+    {
+        top: 0;
+    }
+}
+
+@keyframes moveBack
+{
+    0%
+    {
+        top: -225px;
+    }
+
+    100%
+    {
+        top: 0;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ===>SETTINGS (SPECIALS CLASS) FOR JAVASCRIPT<=== */
+
+.invisible
+{
+    display: none;
+}
+
+.visible
+{
+    display: block;
+}
+
 /* ---------------------------------------------------------------------------------------- */
 /* ===>RESPONSIVE SETTINGS<=== */
+
+@media screen and (max-width: 549px)
+{
+/* Mobile Menu */
+/* ----------------------------------------*/
+
+    .mobileMenuCss
+    {
+        position: absolute;
+        height: 180px;
+        top: -225px;
+        right: 0;
+        text-align: center;
+        background-color: #435962;
+        color: white;
+        z-index: 2;
+        margin: 0;
+        border-bottom: 2px solid rgba(51, 51, 51, 0.3);
+    }
+
+    header ul
+    {
+        flex-direction: column;
+        justify-content: space-around;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    .pop
+    {
+        animation: moveBack 0.5s ease;
+        top: 0;
+    }
+
+    #hamburger
+    {
+        display: block;
+        position: absolute;
+        right: 8.5%;
+        top: 35%;
+        cursor: pointer;
+    }
+
+    #exitMobileMenu
+    {
+        display: block;
+    }
+
+    header nav li
+    {
+        width: 50%;
+    }
+
+    nav li:hover
+    {
+        color: inherit;
+    }
+
+    .fa-bars
+    {
+        font-size: 1.8em;
+        color: #435962;
+    }
+
+    .filterBody
+    {
+        filter: opacity(50%);
+    }
+
+    .fa-times-circle
+    {
+        right: 8%;
+    }
+
+/* Global & Content */
+/* ----------------------------------------*/
+
+    header, footer
+    {
+        height: 96px;
+        width: 90%;
+        padding-right: 5%;
+        padding-left: 5%;
+        background-color: rgb(251, 251, 251);
+        display: flex;
+    }
+
+    #footerAuthor
+    {
+        font-size: 1em;
+    }
+
+    #legalsLink
+    {
+        font-size: 0.8em;
+    }
+
+    header h1
+    {
+        font-size: 1.2em;
+    }
+
+    #pageContent
+    {
+        width: 90%;
+        padding-bottom: 10px;
+        padding-top: 20px;
+    }
+
+    body
+    {
+        font-size: 94%;
+    }
+
+    #lastPostBlog
+    {
+        flex-direction: column;
+    }
+
+    #lastPostBlog figure
+    {
+        width: 100%;
+    }
+
+    #contentLastPost
+    {
+        width: 100%;
+    }
+
+    #chapCountLastPost
+    {
+        margin: 0;
+    }
+
+    #last
+    {
+        margin-bottom: 45px;
+    }
+
+    .rightC
+    {
+        padding: 0;
+        padding-bottom: 20px;
+        width: 85%;
+        margin: auto;
+    }
+
+    #rightCLastPost
+    {
+        margin: auto;
+        padding: 0;
+        padding-bottom: 20px;
+        width: 85%;
+    }
+
+    .datePosts
+    {
+        width: 100%;
+        text-align: inherit;
+    }
+
+    .blocTitlePost
+    {
+        display: inherit;
+    }
+
+    .postsBlog figure
+    {
+        height: auto;
+    }
+
+    .contentPosts
+    {
+        line-height: 1.38em;
+        width: 100%;
+    }
+
+    .showMoreContent
+    {
+        font-size: 0.9em;
+    }
+
+    #more 
+    {
+        flex-direction: column;
+    }
+
+    .postsBlog
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 550px) and (max-width: 639px)
+{
+/* Mobile Menu */
+/* ----------------------------------------*/
+
+    .mobileMenuCss
+    {
+        position: absolute;
+        height: 180px;
+        top: -225px;
+        right: 0;
+        text-align: center;
+        background-color: #435962;
+        color: white;
+        z-index: 2;
+        margin: 0;
+        border-bottom: 2px solid rgba(51, 51, 51, 0.3);
+    }
+
+    header ul
+    {
+        flex-direction: column;
+        justify-content: space-around;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    .pop
+    {
+        animation: moveBack 0.5s ease;
+        top: 0;
+    }
+
+    #hamburger
+    {
+        display: block;
+        position: absolute;
+        right: 7%;
+        top: 30%;
+        cursor: pointer;
+    }
+
+    #exitMobileMenu
+    {
+        display: block;
+    }
+
+    header nav li
+    {
+        width: 45%;
+    }
+
+    nav li:hover
+    {
+        color: inherit;
+    }
+
+    .fa-bars
+    {
+        font-size: 2.5em;
+        color: #435962;
+    }
+
+    .filterBody
+    {
+        filter: opacity(50%);
+    }
+
+/* Global & Content */
+/* ----------------------------------------*/
+
+    header, footer
+    {
+        height: 96px;
+        width: 86%;
+        padding-right: 7%;
+        padding-left: 7%;
+        background-color: rgb(251, 251, 251);
+        display: flex;
+    }
+
+    #pageContent
+    {
+        width: 85%;
+        padding-bottom: 10px;
+    }
+
+    body
+    {
+        font-size: 94%;
+    }
+
+    #lastPostBlog
+    {
+        flex-direction: column;
+    }
+
+    #lastPostBlog figure
+    {
+        width: 100%;
+    }
+
+    #rightCLastPost
+    {
+        padding: 25px;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 100%;
+    }
+
+    .postsBlog figure
+    {
+        height: auto;
+    }
+
+    .contentPosts
+    {
+        line-height: 1.38em;
+        width: 100%;
+    }
+
+    #more 
+    {
+        flex-direction: column;
+    }
+
+    .postsBlog
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1099px)
+{
+
+/* Mobile Menu */
+/* ----------------------------------------*/
+
+    .mobileMenuCss
+    {
+        position: absolute;
+        height: 180px;
+        top: -225px;
+        right: 0;
+        text-align: center;
+        background-color: #435962;
+        color: white;
+        z-index: 2;
+        margin: 0;
+        border-bottom: 2px solid rgba(51, 51, 51, 0.3);
+    }
+
+    header ul
+    {
+        flex-direction: column;
+        justify-content: space-around;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    .pop
+    {
+        animation: moveBack 0.5s ease;
+        top: 0;
+    }
+
+    #hamburger
+    {
+        display: block;
+        position: absolute;
+        right: 7%;
+        top: 30%;
+        cursor: pointer;
+    }
+
+    #exitMobileMenu
+    {
+        display: block;
+    }
+
+    header nav li
+    {
+        width: 32%;
+    }
+
+    nav li:hover
+    {
+        color: inherit;
+    }
+
+    .fa-bars
+    {
+        font-size: 2.5em;
+        color: #435962;
+    }
+
+    .filterBody
+    {
+        filter: opacity(50%);
+    }
+
+/* Global & Content */
+/* ----------------------------------------*/
+
+    header, footer
+    {
+        height: 96px;
+        width: 84%;
+        padding-right: 8%;
+        padding-left: 8%;
+        background-color: rgb(251, 251, 251);
+        display: flex;
+    }
+
+    #pageContent
+    {
+        width: 74%;
+        padding-bottom: 10px;
+    }
+
+    body
+    {
+        font-size: 94%;
+    }
+
+    #lastPostBlog
+    {
+        flex-direction: column;
+    }
+
+    #lastPostBlog figure
+    {
+        width: 100%;
+    }
+
+    #rightCLastPost
+    {
+        padding: 25px;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 100%;
+    }
+
+    .contentPosts
+    {
+        line-height: 1.38em;
+        width: 100%;
+    }
+
+    #more 
+    {
+        flex-direction: column;
+    }
+
+    .postsBlog
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1400px)
+{
+    #pageContent
+    {
+        width: 85%;
+        padding-bottom: 10px;
+    }
+
+    body
+    {
+        font-size: 95%;
+    }
+
+    #rightCLastPost
+    {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .contentPosts
+    {
+        line-height: 1.4em;
+    }
+}

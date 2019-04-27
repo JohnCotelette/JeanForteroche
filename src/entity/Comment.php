@@ -1,6 +1,5 @@
 <?php 
-namespace App\Src\Models;
-
+namespace App\Src\Entity;
 
 class Comment
 {
@@ -8,7 +7,6 @@ class Comment
 	private $author;
 	private $dateComment;
 	private $content;
-
 
 	public function getID()
 	{
@@ -29,7 +27,6 @@ class Comment
 	{
 		return $this->content;
 	}
-
 
 	public function setID($ID)
 	{

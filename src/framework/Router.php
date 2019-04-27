@@ -1,21 +1,18 @@
 <?php 
-namespace App\Config;
-use App\Src\Controllers\FrontController;
-use App\Src\Controllers\BackController;
-use App\Src\Controllers\ErrorController;
+namespace App\Src\Framework;
+use App\Src\Controller\HomeController;
+use App\Src\Controller\ErrorController;
 use Exception;
-
 
 class Router 
 {
-	private $frontController;
+	private $homeController;
 	private $backController;
 	private $errorController;
 
 	public function __construct()
 	{
-		$this->frontController = new FrontController();
-		$this->backController = new BackController();
+		$this->homeController = new HomeController();
 		$this->errorController = new ErrorController();
 	}
 
@@ -27,7 +24,7 @@ class Router
 			{
 				if($_GET["route"] === "article") 
 				{
-					$this->frontController->article($_GET["articleID"]);
+					$this->homeController->article($_GET["articleID"]);
 				} 
 				else
 				{
@@ -36,7 +33,7 @@ class Router
 			} 
 			else
 			{
-				$this->frontController->home();
+				$this->homeController->home();
 			}
 		}
 

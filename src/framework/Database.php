@@ -7,15 +7,13 @@
  * 4. "createRequest()" : for specials requests (prepare/execute) / "protected" for inheritance
  */
 
-namespace App\Src\Managers;
+namespace App\Src\Framework;
 use PDO;
 use Exception;
 
-
-abstract class DataBaseManager
+abstract class Database
 {
 	private $connection;
-
 
 	private function checkConnection()
 	{
@@ -28,7 +26,6 @@ abstract class DataBaseManager
 			return $this->connection;
 		}
 	}
-
 
 	private function getConnection()
 	{
@@ -44,7 +41,6 @@ abstract class DataBaseManager
 			"Erreur: " . $errorConnect->getMessage();
 		}
 	}
-
 
 	protected function createRequest($sql, $parameters = null)
 	{

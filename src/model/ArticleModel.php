@@ -1,25 +1,28 @@
 <?php 
-namespace App\Src\Managers;
-use App\Src\Models\Article;
+namespace App\Src\Model;
+use App\Src\Framework\Database;
+use App\Src\Entity\Article;
 
-
-class ArticleManager extends DataBaseManager
+class ArticleModel extends Database
 {
 	private function buildObject($row)
 	{
 		$article = new Article();
 		$article->setID($row["ID"]);
+		$article->setTitleBook($row["titleBook"]);
 		$article->setTitle($row["title"]);
 		$article->setAuthor($row["author"]);
 		$article->setDatePost($row["datePost"]);
 		$article->setContent($row["content"]);
+		$article->setContentCut($row["content"]);
+		$article->setImageLink($row["localPicture"]);
 		return $article;
 	}
 
 	public function getArticles()
 	{
 		$sql = 
-			"SELECT ID, title, author, content, datePost
+			"SELECT ID, titleBook, title, author, content, datePost, localPicture
 			FROM posts
 			ORDER BY ID DESC";
 		$result = $this->createRequest($sql);

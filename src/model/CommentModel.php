@@ -1,9 +1,9 @@
 <?php
-namespace App\Src\Managers;
-use App\Src\Models\Comment;
+namespace App\Src\Model;
+use App\Src\Framework\Database;
+use App\Src\Entity\Comment;
 
-
-class CommentManager extends DataBaseManager
+class CommentModel extends Database
 {
 	private function buildObject($row)
 	{

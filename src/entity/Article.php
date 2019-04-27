@@ -1,19 +1,25 @@
 <?php 
-namespace App\Src\Models;
-
+namespace App\Src\Entity;
 
 class Article 
 {
 	private $ID;
+	private $titleBook;
 	private $title;
 	private $author;
 	private $datePost;
 	private $content;
-
+	private $contentCut;
+	private $imageLink;
 
 	public function getID()
 	{
 		return $this->ID;
+	}
+
+	public function getTitleBook()
+	{
+		return $this->titleBook;
 	}
 
 	public function getTitle()
@@ -36,10 +42,24 @@ class Article
 		return $this->content;
 	}
 
+	public function getContentCut()
+	{
+		return $this->contentCut;
+	}
+
+	public function getImageLink()
+	{
+		return $this->imageLink;
+	}
 
 	public function setID($id)
 	{
 		$this->ID = $id;
+	}
+
+	public function setTitleBook($titleBook)
+	{
+		$this->titleBook = $titleBook;
 	}
 
 	public function setTitle($title)
@@ -60,5 +80,15 @@ class Article
 	public function setContent($content)
 	{
 		$this->content = $content;
+	}
+
+	public function setContentCut($content)
+	{
+		$this->contentCut = mb_strimwidth($content, 0, 400, "...");
+	}
+
+	public function setImageLink($imageLink)
+	{
+		$this->imageLink = $imageLink;
 	}
 }
