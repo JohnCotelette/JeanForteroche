@@ -32,7 +32,7 @@ class MobileNav
 		this.hamburgerButton.addEventListener("click", this.showMenu.bind(this));
 		this.exitMobileMenu.addEventListener("click", this.hideMenu.bind(this));
 		
-		for(var i = 0; i < this.mobileMenuLinks.length; i++)
+		for(let i = 0; i < this.mobileMenuLinks.length; i++)
 		{
 			this.mobileMenuLinks[i].addEventListener("click", this.hideMenu.bind(this));
 		};

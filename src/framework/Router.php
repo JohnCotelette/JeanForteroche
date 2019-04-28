@@ -1,19 +1,20 @@
 <?php 
 namespace App\Src\Framework;
 use App\Src\Controller\HomeController;
+use App\Src\Controller\SingleArticleController;
 use App\Src\Controller\ErrorController;
 use Exception;
 
 class Router 
 {
 	private $homeController;
-	private $backController;
 	private $errorController;
 
 	public function __construct()
 	{
 		$this->homeController = new HomeController();
 		$this->errorController = new ErrorController();
+		$this->singleArticleController = new SingleArticleController();
 	}
 
 	public function run()
@@ -22,9 +23,9 @@ class Router
 		{
 			if(isset($_GET["route"]))
 			{
-				if($_GET["route"] === "article") 
+				if($_GET["route"] === "singleArticle") 
 				{
-					$this->homeController->article($_GET["articleID"]);
+					$this->singleArticleController->article($_GET["articleID"]);
 				} 
 				else
 				{

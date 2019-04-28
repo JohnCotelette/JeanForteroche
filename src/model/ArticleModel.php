@@ -14,7 +14,6 @@ class ArticleModel extends Database
 		$article->setAuthor($row["author"]);
 		$article->setDatePost($row["datePost"]);
 		$article->setContent($row["content"]);
-		$article->setContentCut($row["content"]);
 		$article->setImageLink($row["localPicture"]);
 		return $article;
 	}
@@ -40,7 +39,7 @@ class ArticleModel extends Database
 	public function getOneArticle($articleID)
 	{
 		$sql =
-			"SELECT ID, title, author, content, datePost
+			"SELECT ID, titleBook, title, author, content, datePost, localPicture
 			FROM posts
 			WHERE ID = ?";
 		$result = $this->createRequest($sql, [$articleID]);

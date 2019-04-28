@@ -13,7 +13,7 @@ class PostsView
 
 	init()
 	{	
-		for (var i = 0; i < this.blocsPosts.length; i++)
+		for (let i = 0; i < this.blocsPosts.length; i++)
 		{
 			this.blocsPosts[i].classList.add("invisible");
 		}
@@ -22,7 +22,7 @@ class PostsView
 
 	display()
 	{
-		for(var i = 0; i < this.postsVisibles; i++)
+		for(let i = 0; i < this.postsVisibles; i++)
 		{
 			if (i < this.blocsPosts.length) 
 			{
@@ -48,3 +48,7 @@ class PostsView
 		});
 	};
 };
+
+let newPostsView = new PostsView;
+newPostsView.init();
+newPostsView.initControls();

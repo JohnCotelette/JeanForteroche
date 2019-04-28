@@ -25,6 +25,7 @@
 				</ul>
 			</nav>
 		</header>
+		
 		<div id="filterBody">
 			<div id="pageContent">
 				<?=$content?>
@@ -40,7 +41,8 @@
 				</div>
 			</footer>
 		</div>
-		<script src="js/PostsView.js"></script>
+
+		<?=$scripts?>
 		<script src="js/MobileNav.js"></script>
 		<script src="js/main.js"></script>
 	</body>

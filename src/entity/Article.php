@@ -1,7 +1,7 @@
 <?php 
 namespace App\Src\Entity;
 
-class Article 
+class Article
 {
 	private $ID;
 	private $titleBook;
@@ -9,7 +9,6 @@ class Article
 	private $author;
 	private $datePost;
 	private $content;
-	private $contentCut;
 	private $imageLink;
 
 	public function getID()
@@ -40,11 +39,6 @@ class Article
 	public function getContent()
 	{
 		return $this->content;
-	}
-
-	public function getContentCut()
-	{
-		return $this->contentCut;
 	}
 
 	public function getImageLink()
@@ -80,11 +74,6 @@ class Article
 	public function setContent($content)
 	{
 		$this->content = $content;
-	}
-
-	public function setContentCut($content)
-	{
-		$this->contentCut = mb_strimwidth($content, 0, 400, "...");
 	}
 
 	public function setImageLink($imageLink)
