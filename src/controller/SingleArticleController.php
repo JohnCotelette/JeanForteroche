@@ -3,6 +3,7 @@ namespace App\Src\Controller;
 use App\Src\Model\ArticleModel;
 use App\Src\Model\CommentModel;
 use App\Src\Framework\View;
+use Exception;
 
 class SingleArticleController
 {
@@ -20,10 +21,22 @@ class SingleArticleController
 	public function article($articleID)
 	{
 		$article = $this->articleModel->getOneArticle($articleID);
-		$comments = $this->commentModel->getCommentsArticle($articleID);
-		return $this->view->render("singleArticle", [
+		if($article->getID() !== null)
+		{
+			$articles = $this->articleModel->getArticles();
+			$totalArticles = count($articles);
+			$comments = $this->commentModel->getCommentsArticle($articleID);
+			$totalComments = count($comments);
+			return $this->view->render("singleArticle", [
 			"article" => $article,
-			"comments" => $comments
-		]);
+			"totalArticles" => $totalArticles,
+			"comments" => $comments,
+			"totalComments" => $totalComments
+			]);
+		} 
+		else 
+		{
+			throw new Exception("L'article demandé n'existe pas");
+		}
 	}
 }

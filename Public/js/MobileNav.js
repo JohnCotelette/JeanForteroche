@@ -15,22 +15,26 @@ class MobileNav
 
 	showMenu(e)
 	{
-		e.preventDefault();
 		this.mobileMenu.classList.toggle("pop");
 		this.filter.classList.toggle("filterBody");
 	};
 
 	hideMenu(e)
 	{
-		e.preventDefault();
 		this.mobileMenu.classList.toggle("pop");
 		this.filter.classList.toggle("filterBody");
 	};
 
 	initControls()
 	{
-		this.hamburgerButton.addEventListener("click", this.showMenu.bind(this));
-		this.exitMobileMenu.addEventListener("click", this.hideMenu.bind(this));
+		this.hamburgerButton.addEventListener("click", (e) => {
+			e.preventDefault();
+			this.showMenu();
+		});
+		this.exitMobileMenu.addEventListener("click", (e) => {
+			e.preventDefault();
+			this.hideMenu();
+		});
 		
 		for(let i = 0; i < this.mobileMenuLinks.length; i++)
 		{

@@ -1,8 +1,9 @@
 <?php 
-use App\Src\Utility\DateFRConvertor;
+use App\Src\Utility\DatesFRConvertor;
 use App\Src\Utility\ContentCutter;
 $this->title = "Blog de Jean Forteroche";
 $this->scripts = '<script src="js/PostsView.js"></script>';
+$this->css = '<link rel="stylesheet" href="css/home.css" />'
 ?>
 
 <section id="last">
@@ -13,14 +14,14 @@ $this->scripts = '<script src="js/PostsView.js"></script>';
 		</figure>
 		<aside id="rightCLastPost">
 			<p id="dateLastPost" class="datePosts">
-				<?=htmlspecialchars(DateFRConvertor::getSimplefiedDateConverted($lastArticle->getDatePost()));?>
+				<?=htmlspecialchars(DatesFRConvertor::getSimplefiedDateConverted($lastArticle->getDatePost()));?>
 			</p>
 			<h3 id="titleLastPost"><?=htmlspecialchars($lastArticle->getTitleBook());?></h3>
 			<p id="chapCountLastPost" class="chapCount">
 				<?=htmlspecialchars($lastArticle->getTitle());?>
 			</p>
 			<p id="contentLastPost" class="contentPosts">
-				<?=htmlspecialchars(ContentCutter::cutTheContentProperly($lastArticle->getContent()));?> 
+				<?=nl2br((htmlspecialchars(ContentCutter::cutTheContentProperly($lastArticle->getContent()))));?> 
 			</p>
 			<p class="pForInput">
 				<a href="index.php?route=singleArticle&articleID=<?=htmlspecialchars($lastArticle->getID());?>" id="showMoreContentLP" class="showMoreContent">Découvrir</a>
@@ -45,7 +46,7 @@ for ($i = $totalArticles - 1; $i > 0; $i--)
 			<div class="blocTitlePost">
 				<h3><?=htmlspecialchars($articles[$i]->getTitle());?></h3>
 				<p class="datePosts">
-					<?=htmlspecialchars(DateFRConvertor::getSimplefiedDateConverted($articles[$i]->getDatePost()));?>
+					<?=htmlspecialchars(DatesFRConvertor::getSimplefiedDateConverted($articles[$i]->getDatePost()));?>
 				</p>
 			</div>
 				<p class="chapCount">

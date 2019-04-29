@@ -23,7 +23,7 @@ class Router
 		{
 			if(isset($_GET["route"]))
 			{
-				if($_GET["route"] === "singleArticle") 
+				if($_GET["route"] === "singleArticle" && (isset($_GET["articleID"])) && intval($_GET["articleID"])) 
 				{
 					$this->singleArticleController->article($_GET["articleID"]);
 				} 

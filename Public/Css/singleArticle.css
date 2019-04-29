@@ -1,0 +1,214 @@
+#singlePostPageContent
+{
+    margin: auto;
+    margin-top: 156px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    width: 80%;
+}
+
+#singlePost
+{
+	background-color: white;
+	padding: 28px;
+	padding-left: 45px;
+	padding-right: 45px;
+}
+
+#flexAuthorDate
+{
+	display: flex;
+	justify-content: space-between;
+	color: rgba(51, 51, 51, 0.5);
+}
+
+#flexAuthorDate h2
+{
+	font-size: 1.2em;
+	font-weight: 300;
+}
+
+.dateSinglePost
+{
+	font-size: 1em;
+}
+
+#singlePost figure
+{
+	margin: auto;
+	width: 70%;
+}
+
+#singlePost figure img
+{
+	width: 100%;
+}
+
+#singlePost h3, #singlePost h4
+{
+	text-align: center;
+	font-family: "Cormorant SC";
+	margin-top: 20px;
+	text-transform: uppercase;
+}
+
+#singlePost h3
+{
+	font-size: 1.7em;
+	margin-bottom: 20px;
+}
+
+#singlePost h4
+{
+	font-size: 2.3em;
+	margin-bottom: 40px;
+}
+
+#singlePost aside
+{
+	width: 70%;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	line-height: 1.65em;
+}
+
+#chaptersNavblock
+{
+	width: 100%;
+	height: 3em;
+	margin: auto;
+	margin-top: 40px;
+}
+
+.chaptersNav
+{
+	background-color: #435962;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    padding: 0.45em;
+    padding-right: 2.3em;
+    padding-left: 2.3em;
+    margin-bottom: 3.5em;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+}
+
+#b1
+{
+	float: left;
+}
+
+#b2
+{
+	float: right;
+}
+
+.chaptersNav:hover
+{
+    color: white;
+    background-color: rgb(51, 51, 51);
+}
+
+#chaptersNavblock, #singlePost
+{
+	animation: apparition 1s ease;
+}
+
+#comments
+{
+	clear: both;
+	background-color: white;
+	padding-top: 28px;
+	padding-bottom: 5px;
+	padding-left: 45px;
+	padding-right: 45px;
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+	transform: scaleY(0);
+    transform-origin: 50% 0;
+    transition:transform 0.2s ease;
+    height: 0;
+}
+
+#comments p
+{
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.3em;
+}
+
+#comments hr
+{
+	width: 85%;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	color: rgba(51, 51, 51, 0.1);
+}
+
+.authorsComments
+{
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+.datesComments
+{
+	color: rgba(51, 51, 51, 0.5);
+	margin-top: 5px;
+	margin-bottom: 0;
+	font-size: 0.9em;
+}
+
+.contentComments
+{
+	margin-top: 11px;
+}
+
+#noComments
+{
+	background-color: white;
+	text-align: center;
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+#showMoreComments
+{
+	display: block;
+	text-transform: uppercase;
+	font-size: 1.15em;
+	margin-bottom: 14px;
+	padding-left: 25px;
+	width: 25%;
+}
+
+#moreCommentsControler
+{
+	width: 85%;
+	margin: auto;
+	clear: both;
+}
+
+.fa-sort-up, .fa-sort-down
+{
+	padding-left: 5px;
+}
+
+.report
+{
+	background-color: white;
+	border: none;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	cursor: pointer;
+}

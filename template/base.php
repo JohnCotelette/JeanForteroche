@@ -5,6 +5,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
 		<link rel="stylesheet" href="css/main.css" />
+		<?=$css?>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<title><?=$title?></title>
 		<meta name="description" content="Retrouvez sur cette page les derniers épisodes de 'Billet simple pour l'Alaska', le dernier roman de JeanForteroche. Pages PHP." />
@@ -17,7 +18,7 @@
 			<nav id="menu">
 				<a id="hamburger" href="#"><i class="fas fa-bars"></i></a>
 				<ul id="contentNav" class="mobileMenuCss">
-					<li class="menuLinks" id="home"><a href="#">Accueil</a></li>
+					<li class="menuLinks" id="home"><a href="index.php">Accueil</a></li>
 					<li class="menuLinks" id="about"><a href="#">A propos de moi</a></li>
 					<li class="menuLinks" id="contact"><a href="#">Contact</a></li>
 					<li class="menuLinks" id="sign"><a href="#">Se connecter</a></li>

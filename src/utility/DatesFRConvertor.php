@@ -1,7 +1,7 @@
 <?php 
 namespace App\Src\Utility;
 
-class DateFRConvertor
+class DatesFRConvertor
 {
 	private static $dateFR;
 
@@ -56,11 +56,13 @@ class DateFRConvertor
 			case "00":
 			$hourFR = "minuit";
 			break;
+			case "01":
+			$hourFR = $hour . " " . "heure";
 			default:
 			$hourFR = $hour . " " . "heures";
 		}
 
-		static::$dateFR = "Le " . $day . " " . $monthFR . " " . $year . " - " . " A " . $hourFR . " " . $minute;
+		static::$dateFR = $day . " " . $monthFR . " " . $year . " - " . " A " . $hourFR . " " . $minute;
 		return static::$dateFR;
 	}
 
