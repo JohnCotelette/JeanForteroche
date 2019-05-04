@@ -7,6 +7,7 @@ class Comment
 	private $author;
 	private $dateComment;
 	private $content;
+	private $reportStatus;
 
 	public function getID()
 	{
@@ -28,6 +29,11 @@ class Comment
 		return $this->content;
 	}
 
+	public function getReportStatus()
+	{
+		return $this->reportStatus;
+	}
+
 	public function setID($ID)
 	{
 		$this->ID = $ID;
@@ -46,5 +52,10 @@ class Comment
 	public function setContent($content)
 	{
 		$this->content = $content;
+	}
+
+	public function setReportStatus($reportStatus)
+	{
+		$this->reportStatus = $reportStatus;
 	}
 }

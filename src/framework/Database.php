@@ -11,7 +11,7 @@ namespace App\Src\Framework;
 use PDO;
 use Exception;
 
-abstract class Database
+class Database
 {
 	private $connection;
 
@@ -20,7 +20,7 @@ abstract class Database
 		if ($this->connection === null)
 		{
 			return $this->getConnection();
-		} 
+		}
 		else 
 		{
 			return $this->connection;
@@ -42,7 +42,7 @@ abstract class Database
 		}
 	}
 
-	protected function createRequest($sql, $parameters = null)
+	public function createRequest($sql, $parameters = null)
 	{
 		if ($parameters)
 		{

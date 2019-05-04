@@ -1,15 +1,20 @@
 <?php 
 namespace App\Src\Controller;
+use App\Src\Framework\View;
 
 class ErrorController
 {
-	public function errorNotFound()
+	private $view;
+
+	public function __construct()
 	{
-		echo "PENSE A FAIRE LE TEMPLATE POUR CETTE PAGE E404";
+		$this->view = new View();
 	}
 
-	public function errorServer()
+	public function errorNotFound()
 	{
-		echo "PENSE A FAIRE LE TEMPLATE POUR CETTE PAGE E500";
+		$this->view->addTitle("Erreur, page non trouvée...");
+		$this->view->addCss("404NotFound");
+		return $this->view->render("404NotFound", []);
 	}
 }

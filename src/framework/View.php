@@ -5,8 +5,52 @@ class View
 {
 	private $file;
 	private $title;
-	private $scripts;
-	private $css;
+	private $css = [];
+	private $scripts = [];
+
+	public function addParameters($title, $css, $scripts)
+	{
+		$this->addTitle($title);
+
+		if (is_array($css))
+		{
+			forEach($css as $style)
+			{
+				$this->addCSS($style);
+			}
+		}
+		else 
+		{
+			$this->addCSS($css);
+		}
+
+		if (is_array($scripts))
+		{
+			forEach($scripts as $script)
+			{
+				$this->addScripts($script);
+			}
+		}
+		else
+		{
+			$this->addScripts($scripts);
+		}
+	}
+
+	public function addTitle($title)
+	{
+		$this->title = $title;
+	}
+
+	public function addCSS($file)
+	{
+		$this->css[] = '<link rel="stylesheet" href="css/' . $file . '.css" />';
+	}
+
+	public function addScripts($file)
+	{
+		$this->scripts[] = '<script src="js/' . $file . '.js"></script>';	
+	}
 
 	public function render($template, $data = [])
 	{
@@ -14,11 +58,11 @@ class View
 		$content = $this->renderFile($this->file, $data);
 		$view = $this->renderFile("../template/base.php", [
 			"title" => $this->title,
-			"content" => $content,
-			"scripts" =>$this->scripts,
-			"css" =>$this->css
+			"css" => $this->css,
+			"scripts" => $this->scripts,
+			"content" => $content
 		]);
-		echo $view;
+		echo $view;	
 	}
 
 	public function renderFile($file, $data)

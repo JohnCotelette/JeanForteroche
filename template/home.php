@@ -1,9 +1,5 @@
 <?php 
-use App\Src\Utility\DatesFRConvertor;
-use App\Src\Utility\ContentCutter;
-$this->title = "Blog de Jean Forteroche";
-$this->scripts = '<script src="js/PostsView.js"></script>';
-$this->css = '<link rel="stylesheet" href="css/home.css" />'
+use App\Src\Utility\FormattingHelper;
 ?>
 
 <section id="last">
@@ -14,14 +10,14 @@ $this->css = '<link rel="stylesheet" href="css/home.css" />'
 		</figure>
 		<aside id="rightCLastPost">
 			<p id="dateLastPost" class="datePosts">
-				<?=htmlspecialchars(DatesFRConvertor::getSimplefiedDateConverted($lastArticle->getDatePost()));?>
+				<?=htmlspecialchars(FormattingHelper::getSimplefiedDateConvertedFR($lastArticle->getDatePost()));?>
 			</p>
 			<h3 id="titleLastPost"><?=htmlspecialchars($lastArticle->getTitleBook());?></h3>
 			<p id="chapCountLastPost" class="chapCount">
 				<?=htmlspecialchars($lastArticle->getTitle());?>
 			</p>
 			<p id="contentLastPost" class="contentPosts">
-				<?=nl2br((htmlspecialchars(ContentCutter::cutTheContentProperly($lastArticle->getContent()))));?> 
+				<?=nl2br((htmlspecialchars(FormattingHelper::cutTheContentProperly($lastArticle->getContent()))));?> 
 			</p>
 			<p class="pForInput">
 				<a href="index.php?route=singleArticle&articleID=<?=htmlspecialchars($lastArticle->getID());?>" id="showMoreContentLP" class="showMoreContent">Découvrir</a>
@@ -46,14 +42,14 @@ for ($i = $totalArticles - 1; $i > 0; $i--)
 			<div class="blocTitlePost">
 				<h3><?=htmlspecialchars($articles[$i]->getTitle());?></h3>
 				<p class="datePosts">
-					<?=htmlspecialchars(DatesFRConvertor::getSimplefiedDateConverted($articles[$i]->getDatePost()));?>
+					<?=htmlspecialchars(FormattingHelper::getSimplefiedDateConvertedFR($articles[$i]->getDatePost()));?>
 				</p>
 			</div>
 				<p class="chapCount">
 					<?=htmlspecialchars($articles[$i]->getTitleBook());?>
 				</p>
 				<p class="contentPosts">
-					<?=htmlspecialchars(ContentCutter::cutTheContentProperly($articles[$i]->getContent()));?>
+					<?=htmlspecialchars(FormattingHelper::cutTheContentProperly($articles[$i]->getContent()));?>
 				</p>
 			<a href="index.php?route=singleArticle&articleID=<?=htmlspecialchars($articles[$i]->getID());?>" class="showMoreContent">Découvrir</a>
 		</div>

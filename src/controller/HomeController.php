@@ -1,5 +1,6 @@
 <?php 
 namespace App\Src\Controller;
+use App\Src\framework\Database;
 use App\Src\Model\ArticleModel;
 use App\Src\Framework\View;
 
@@ -10,7 +11,8 @@ class HomeController
 
 	public function __construct()
 	{
-		$this->articleModel = new ArticleModel();
+		$database = new Database;
+		$this->articleModel = new ArticleModel($database);
 		$this->view = new View();
 	}
 
@@ -19,6 +21,9 @@ class HomeController
 		$articles = $this->articleModel->getArticles();
 		$totalArticles = count($articles);
 		$lastArticle = $articles[$totalArticles];
+
+		$this->view->addParameters("Blog de Jean Forteroche", "home", "PostsView");
+
 		return $this->view->render("home", [
 			"articles" => $articles,
 			"lastArticle" => $lastArticle,

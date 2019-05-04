@@ -1,9 +1,9 @@
 <?php 
 namespace App\Src\Model;
-use App\Src\Framework\Database;
+use App\Src\Model\Model;
 use App\Src\Entity\Article;
 
-class ArticleModel extends Database
+class ArticleModel extends Model
 {
 	private function buildObject($row)
 	{
@@ -24,7 +24,7 @@ class ArticleModel extends Database
 			"SELECT ID, titleBook, title, author, content, datePost, localPicture
 			FROM posts
 			ORDER BY ID DESC";
-		$result = $this->createRequest($sql);
+		$result = $this->dataBase->createRequest($sql);
 		$articles = [];
 		forEach($result as $row)
 		{
@@ -42,7 +42,7 @@ class ArticleModel extends Database
 			"SELECT ID, titleBook, title, author, content, datePost, localPicture
 			FROM posts
 			WHERE ID = ?";
-		$result = $this->createRequest($sql, [$articleID]);
+		$result = $this->dataBase->createRequest($sql, [$articleID]);
 		$article = $result->fetch();
 		$result->closeCursor();
 		return $this->buildObject($article);

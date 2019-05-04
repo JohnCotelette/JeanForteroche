@@ -253,14 +253,29 @@ header li:hover, #legalsLink:hover
 
 @keyframes fadeInLeft
 {
-    0%
+    0% 
     {
-        width: 0;
+        opacity: 0;
+        transform: translateX(100%);
     }
-
     100%
     {
-        width: 100%;
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes fadeInLeft
+{
+    0% 
+    {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -321,7 +336,7 @@ header li:hover, #legalsLink:hover
 
 .invisible
 {
-    display: none;
+    display: none !important;
 }
 
 .visible
@@ -436,6 +451,13 @@ header li:hover, #legalsLink:hover
     {
         font-size: 1.2em;
     }
+
+/* Content */
+/* ----------------------------------------*/
+    body
+    {
+        font-size: 94%;
+    }
 }
 
 @media screen and (min-width: 550px) and (max-width: 639px)
@@ -516,6 +538,13 @@ header li:hover, #legalsLink:hover
         background-color: rgb(251, 251, 251);
         display: flex;
     }
+
+/* Content */
+/* ----------------------------------------*/
+    body
+    {
+        font-size: 94%;
+    }
 }
 
 @media screen and (min-width: 640px) and (max-width: 1099px)
@@ -595,5 +624,13 @@ header li:hover, #legalsLink:hover
         padding-left: 8%;
         background-color: rgb(251, 251, 251);
         display: flex;
+    }
+
+/* Content */
+/* ----------------------------------------*/
+    
+    body
+    {
+        font-size: 94%;
     }
 }

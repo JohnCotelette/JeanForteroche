@@ -1,11 +1,32 @@
-<?php 
+<?php
 namespace App\Src\Utility;
 
-class DatesFRConvertor
+class FormattingHelper
 {
-	private static $dateFR;
+	static private $dateFR;
 
-	public static function convertDateToFR($date)
+	static public function cutTheContentProperly($content)
+	{
+		$content = substr($content, 0, 300);
+		$content = substr($content, 0, strrpos($content, " "));
+		$contentCut = $content . " [...]";
+		return $contentCut;
+	}
+
+	static public function singularOrPluralCorrector($word, $number)
+	{
+		if($number < 2)
+		{
+			$word = substr($word, 0, -1);
+			return $word;
+		}
+		else
+		{
+			return $word; 
+		}
+	}
+
+	static public function convertDateToFR($date)
 	{
 		$dateWithOnlySpace = str_replace(array("-", ":"), " ", $date);
 		list($year, $month, $day, $hour, $minute, $seconde) = explode(" ", $dateWithOnlySpace);
@@ -62,15 +83,14 @@ class DatesFRConvertor
 			$hourFR = $hour . " " . "heures";
 		}
 
-		static::$dateFR = $day . " " . $monthFR . " " . $year . " - " . " A " . $hourFR . " " . $minute;
-		return static::$dateFR;
+		$dateFR = $day . " " . $monthFR . " " . $year . " - " . " A " . $hourFR . " " . $minute;
+		return static::$dateFR = $dateFR;
 	}
 
-	public static function getSimplefiedDateConverted($date)
+	static public function getSimplefiedDateConvertedFR($date)
 	{
 		static::convertDateToFR($date);
 		list($dateSimplified, $uselessPart) = explode("-", static::$dateFR);
-		static::$dateFR = $dateSimplified;
-		return static::$dateFR;
+		return $dateSimplified;
 	}
 }
