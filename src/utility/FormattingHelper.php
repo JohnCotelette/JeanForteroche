@@ -13,6 +13,14 @@ class FormattingHelper
 		return $contentCut;
 	}
 
+	static public function countOnlyCharacters($content)
+	{
+		$contentWithoutRTR = preg_replace("#\n|\t|\r#","", $content);
+		$contentWithOnlyCharacters = str_replace(" ", "", $contentWithoutRTR);
+		$realLengthContent = strlen($contentWithOnlyCharacters);
+		return $realLengthContent;
+	}
+
 	static public function singularOrPluralCorrector($word, $number)
 	{
 		if($number < 2)

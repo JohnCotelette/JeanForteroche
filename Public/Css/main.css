@@ -89,6 +89,27 @@ header, footer
     text-transform: uppercase;
 }
 
+footer
+{
+    margin-top: 45px;
+}
+
+#totalPageContent
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#pageContent
+{
+    flex: 1;
+    margin-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* ---------------------------------------------------------------------------------------- */
 /* ===> SPECIFIC SETTINGS <=== */
 
@@ -331,6 +352,52 @@ header li:hover, #legalsLink:hover
     }
 }
 
+@keyframes shake 
+{
+    10%, 90%
+    {
+        transform: translate3d(-1px, 0, 0);
+    }
+      
+    20%, 80%
+    {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70%
+    {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60%
+    {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@-webkit-keyframes shake 
+{
+    10%, 90%
+    {
+        transform: translate3d(-1px, 0, 0);
+    }
+      
+    20%, 80%
+    {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70%
+    {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60%
+    {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
 /* ---------------------------------------------------------------------------------------- */
 /* ===> SETTINGS (SPECIALS CLASS) FOR JAVASCRIPT <=== */
 
@@ -437,6 +504,11 @@ header li:hover, #legalsLink:hover
         display: flex;
     }
 
+    footer
+    {
+        margin-top: 32px;
+    }
+
     #footerAuthor
     {
         font-size: 1em;
@@ -458,6 +530,12 @@ header li:hover, #legalsLink:hover
     {
         font-size: 94%;
     }
+
+    #pageContent
+    {
+        margin-top: 122px;
+    }
+
 }
 
 @media screen and (min-width: 550px) and (max-width: 639px)
@@ -539,11 +617,21 @@ header li:hover, #legalsLink:hover
         display: flex;
     }
 
+    footer
+    {
+        margin-top: 33px;
+    }
+
 /* Content */
 /* ----------------------------------------*/
     body
     {
         font-size: 94%;
+    }
+
+    #pageContent
+    {
+        margin-top: 125px;
     }
 }
 
@@ -626,11 +714,21 @@ header li:hover, #legalsLink:hover
         display: flex;
     }
 
+    footer
+    {
+        margin-top: 33px;
+    }
+
 /* Content */
 /* ----------------------------------------*/
     
     body
     {
         font-size: 94%;
+    }
+
+    #pageContent
+    {
+        margin-top: 130px;
     }
 }

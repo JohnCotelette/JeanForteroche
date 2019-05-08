@@ -4,15 +4,9 @@
 /* Content */
 /* ----------------------------------------*/
 
-body
-{
-	overflow: hidden;
-}
-
 #blocAboutTitle
 {
 	margin: auto;
-	margin-top: 142px;
 	margin-bottom: 10px;
 	width: 80%;
 }
@@ -26,7 +20,6 @@ body
 {
 	width: 78%;
 	margin: auto;
-	margin-bottom: 50px;
 	background-color: white;
 	padding: 30px;
 	padding-left: 25px;
@@ -76,10 +69,6 @@ body
 	text-transform: uppercase;
 }
 
-#container
-{
-	min-height: 75vh;
-}
 /* ---------------------------------------------------------------------------------------- */
 /* ===> RESPONSIVE SETTINGS <=== */
 
@@ -88,16 +77,6 @@ body
 
 /* Content */
 /* ----------------------------------------*/
-
-	body
-	{
-		min-height: inherit;
-	}
-
-	#blocAboutTitle
-	{
-		margin-top: 128px;
-	}
 
 	#description
 	{
@@ -137,11 +116,6 @@ body
 		margin: auto;
 	}
 
-	#container
-	{
-		min-height: inherit;
-	}
-
 	#text
 	{
 		line-height: 1.5em;
@@ -153,11 +127,6 @@ body
 
 /* Content */
 /* ----------------------------------------*/
-
-	body
-	{
-		min-height: inherit;
-	}
 
 	#description
 	{
@@ -187,11 +156,6 @@ body
 		width: 70%;
 	}
 
-	#container
-	{
-		min-height: inherit;
-	}
-
 	#text
 	{
 		line-height: 1.5em;
@@ -203,11 +167,6 @@ body
 
 /* Content */
 /* ----------------------------------------*/
-
-	body
-	{
-		min-height: inherit;
-	}
 
 	#description
 	{
@@ -237,11 +196,6 @@ body
 		width: 70%;
 	}
 
-	#container
-	{
-		min-height: inherit;
-	}
-
 	#text
 	{
 		line-height: 1.5em;
@@ -259,7 +213,3 @@ body
 		line-height: 1.5em;
 	}
 }
-
-
-
-

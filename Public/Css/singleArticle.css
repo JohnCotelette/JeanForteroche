@@ -7,9 +7,8 @@
 #singlePostPageContent
 {
     margin: auto;
-    margin-top: 156px;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     width: 80%;
 }
 
@@ -242,6 +241,7 @@
 	margin: auto;
 	margin-top: 40px;
 	padding: 30px;
+	padding-top: 20px;
 	padding-bottom: 15px;
 }
 
@@ -324,6 +324,7 @@ form input, form textarea
 	color: white;
 	text-transform: uppercase;
 	animation: apparition 0.5s ease-out;
+	cursor: pointer;
 }
 
 .submit:hover
@@ -352,6 +353,11 @@ form input, form textarea
 	line-height: 1.3em;
 }
 
+#displayCaptcha
+{
+	margin-top: 20px;
+}
+
 #captchaResult
 {
 	width: 18px;
@@ -372,6 +378,11 @@ form input, form textarea
 	width: 70%;
 	line-height: 1.3em;
 	text-align: center;
+}
+
+#form
+{
+	animation: apparition 1s ease;
 }
 
 /* ---------------------------------------------------------------------------------------- */
@@ -452,8 +463,7 @@ form input, form textarea
 	#singlePostPageContent
 	{
 		width: 90%;
-		margin-top: 140px;
-		margin-bottom: 28px;
+		margin-top: 10px;
 	}
 
 	#comments

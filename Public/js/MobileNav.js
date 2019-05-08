@@ -10,19 +10,22 @@ class MobileNav
 		this.exitMobileMenu = document.getElementById("exitMobileMenu");
 		this.mobileMenu = document.getElementById("contentNav");
 		this.mobileMenuLinks = document.querySelectorAll(".menuLinks");
-		this.filter = document.getElementById("filterBody");
+		this.filter1 = document.getElementById("pageContent");
+		this.filter2 = document.getElementById("footer");
 	};
 
 	showMenu(e)
 	{
 		this.mobileMenu.classList.toggle("pop");
-		this.filter.classList.toggle("filterBody");
+		this.filter1.classList.toggle("filterBody");
+		this.filter2.classList.toggle("filterBody");
 	};
 
 	hideMenu(e)
 	{
 		this.mobileMenu.classList.toggle("pop");
-		this.filter.classList.toggle("filterBody");
+		this.filter1.classList.toggle("filterBody");
+		this.filter2.classList.toggle("filterBody");
 	};
 
 	initControls()

@@ -1,24 +1,24 @@
 <?php 
 namespace App\Src\Controller;
-use App\Src\framework\Database;
+use App\Src\Framework\Database;
+use App\Src\Framework\Controller;
 use App\Src\Model\ArticleModel;
 use App\Src\Model\CommentModel;
-use App\Src\Framework\View;
 use App\Src\Utility\SpecialsDisplays;
+use App\Src\Utility\FormattingHelper;
 use Exception;
 
-class SingleArticleController
+class SingleArticleController extends Controller
 {
 	private $articleModel;
 	private $commentModel;
-	private $view;
 
 	public function __construct()
 	{
+		parent::__construct();
 		$database = new Database;
 		$this->articleModel = new ArticleModel($database);
 		$this->commentModel = new CommentModel($database);
-		$this->view = new View();
 	}
 
 	public function article($articleID)
@@ -51,9 +51,7 @@ class SingleArticleController
 			{
 				$scripts = ["Captcha", "Ajax", "PostAndReportComment"];
 			}
-
 			$this->view->addParameters($title, $css, $scripts);
-
 			return $this->view->render("singleArticle", [
 			"article" => $article,
 			"totalArticles" => $totalArticles,
@@ -69,11 +67,24 @@ class SingleArticleController
 
 	public function postComment($comment)
 	{
-		$author = urldecode($comment["name"]);
+		$name = urldecode($comment["name"]);
+		$surname = urldecode($comment["surname"]);
 		$content = urldecode($comment["message"]);
 		$article_ID = $comment["articleID"];
-		var_dump($author, $content, $article_ID);
-		$this->commentModel->addComment($author, $content, $article_ID);
+		$regexName = "/^[A-Za-z0-9]{3,16}$/";
+		$realLengthContent = FormattingHelper::countOnlyCharacters($content);
+		if (preg_match($regexName, $name) && preg_match($regexName, $surname) && $realLengthContent > 9 && $realLengthContent < 501)
+		{
+			$author = $surname . " " . $name;
+			$content = addslashes($content);
+			$this->commentModel->addComment($author, $content, $article_ID);
+			echo "Ok";
+		}
+		else 
+		{
+			echo "Les champs 'Nom' et 'Prénom' doivent tous deux faire entre 3 et 16 caractères. Le commentaire doit faire entre 10 et 500 caractères.";
+			return;
+		}
 	}
 
 	public function reportComment($commentID)

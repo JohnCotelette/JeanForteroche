@@ -3,8 +3,8 @@
 	{
 		"psr-4": 
 		{
-		"App\\Config\\": "Config/",	
-		"App\\Src\\": "Src/"
+		"App\\Config\\": "config/",	
+		"App\\Src\\": "src/"
 		}
 	}
 }

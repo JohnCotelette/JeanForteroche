@@ -11,7 +11,7 @@ class Captcha
 		this.captchaNumber2 = document.getElementById("captchaNumber2");
 		this.captchaResult = document.getElementById("captchaResult");
 		this.captchaValidator = document.getElementById("captchaValidator");
-		this.submitFormButton = document.getElementById("submit");
+		this.form = document.getElementById("form");
 		this.n1 = null;
 		this.n2 = null;
 		this.autorisation = "false";
@@ -31,7 +31,7 @@ class Captcha
 		if(this.captchaResult.value == (this.n1 + this.n2))
 		{
 			this.captcha.classList.add("invisible");
-			this.submitFormButton.classList.remove("invisible");
+			this.form.classList.remove("invisible");
 			this.autorisation = "true";
 		}
 		else 

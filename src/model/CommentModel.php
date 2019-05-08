@@ -1,6 +1,6 @@
 <?php
 namespace App\Src\Model;
-use App\Src\Model\Model;
+use App\Src\Framework\Model;
 use App\Src\Entity\Comment;
 
 class CommentModel extends Model
@@ -40,7 +40,6 @@ class CommentModel extends Model
 		"INSERT INTO comments (author, content, article_ID) 
 		VALUES ('$author', '$content', '$article_ID')";
 		$addComment = $this->dataBase->createRequest($sql);
-		return $addComment;
 	}
 
 	public function reportComment($commentID)

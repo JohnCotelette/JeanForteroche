@@ -1,6 +1,6 @@
 <?php 
 namespace App\Src\Model;
-use App\Src\Model\Model;
+use App\Src\Framework\Model;
 use App\Src\Entity\Article;
 
 class ArticleModel extends Model

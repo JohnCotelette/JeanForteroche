@@ -31,51 +31,51 @@ use App\Src\Utility\SpecialsDisplays;
 		<a class="chaptersNav" id="b2" href="index.php?route=singleArticle&articleID=<?=htmlspecialchars($article->getID() + 1)?>">Chapitre suivant</a>
 	</div>
 
-		<?php
-		if ($totalComments > 0)
-		{
-		?>
+<?php
+if ($totalComments > 0)
+{
+?>
 	<div id="moreCommentsControler">
 		<a href="#" id="showMoreComments"><?=htmlspecialchars($totalComments);?> <?=FormattingHelper::singularOrPluralCorrector("commentaires", $totalComments)?> <i id="arrow" class="fas fa-sort-up"></i></a>
 	</div>
 
 	<section id="comments">
-		<?php
-			forEach($comments as $comment)
-			{
-		?>
+<?php
+	forEach($comments as $comment)
+	{
+?>
 		<div class="comments">
 			<p class="authorsComments">
 				<?=nl2br(htmlspecialchars($comment->getAuthor()));?>
-				<?php
-				if ($comment->getReportStatus() == null)
-				{
-				?>
+<?php
+		if ($comment->getReportStatus() == null)
+		{
+?>
 				<input id="<?=$comment->getID();?>" class="report" type="button" value="Signaler" />
-				<?php
-				}
-				?>
+<?php
+		}
+?>
 			</p>
 			<p class="datesComments">
 				Posté le <?=htmlspecialchars(FormattingHelper::convertDateToFR($comment->getDateComment()));?>
 			</p>
 			<p class ="contentComments">
-				<?=htmlspecialchars($comment->getContent());?>
+				<?=nl2br(htmlspecialchars($comment->getContent()));?>
 			</p>
 		</div>
 		<hr>
-		<?php
-			}
+<?php
 		}
-		else 
-		{
-		?>
+	}
+else 
+{
+?>
 		<p id="noComments">
 			Il n'y a pas encore de commentaire pour cet article.
 		</p>
-		<?php
-		}
-		?>
+<?php
+}
+?>
 	</section>
 
 	<section id="commentPost">
@@ -85,7 +85,7 @@ use App\Src\Utility\SpecialsDisplays;
 				Tous les champs sont obligatoires.
 			</p>
 
-			<form id="postForm" method="post" action="#">
+			<form id="form" class="invisible" method="post" action="#">
 				<div id="identity">
 					<p>
 						<label class="labels" for="nom">Nom*</label><br />
@@ -99,19 +99,20 @@ use App\Src\Utility\SpecialsDisplays;
 
 				<p id="blocCommentPostContent">
 					<label class="labels" for="commentPostContent">Commentaire*</label><br />
-					<textarea id="commentPostContent" name="commentPostContent" maxlength="800" required /></textarea>
+					<textarea id="commentPostContent" name="commentPostContent" maxlength="500" required /></textarea>
 				</p>
 				
 				<div id="submitContainer">
 					<p>
-						<input type="submit" id="submit" class="submit invisible" value="Envoyer" />
+						<input type="hidden" id="articleID" data-articleID="<?=$article->getID();?>" />
+						<input type="submit" id="submit" class="submit" value="Envoyer" />
 					</p>
 				</div>
 
 			</form>
 
 			<div id="displayCaptchaContainer">
-				<button id="displayCaptcha" class="submit">Valider</button>
+				<button id="displayCaptcha" class="submit">Laisser un commentaire</button>
 			</div>
 
 			<div id="captcha" class="invisible">
@@ -120,7 +121,6 @@ use App\Src\Utility\SpecialsDisplays;
 					<input type="text" name="captchaResult" id="captchaResult" maxlength="2" />
 				</p>
 				<button id="captchaValidator" class="submit">Validez le résultat</button>
-				<span id="articleID" class="invisible"><?=$article->getID()?></span>
 			</div>
 
 			<p id="confirmPostMessage" class="invisible">

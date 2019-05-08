@@ -6,7 +6,7 @@ class PostAndReportComment
 {
 	constructor()
 	{
-		this.form = document.getElementById("postForm");
+		this.form = document.getElementById("form");
 		this.name = this.form.nom;
 		this.surname = this.form.prenom;
 		this.contentPost = document.getElementById("commentPostContent");
@@ -44,19 +44,26 @@ class PostAndReportComment
 	postComment()
 	{
 		let message = encodeURIComponent(this.contentPost.value);
-		let articleID = encodeURIComponent(this.currentArticle.textContent);
-		let name = encodeURIComponent(this.surname.value + " " + this.name.value);
-		let data = "name=" + name + "&message=" + message + "&articleID=" + articleID + "&autorisation=" + this.captcha.autorisation;
+		let articleID = encodeURIComponent(this.currentArticle.getAttribute("data-articleID"));
+		let surname = encodeURIComponent(this.surname.value);
+		let name = encodeURIComponent(this.name.value);
+		let data = "surname=" + surname + "&name=" + name + "&message=" + message + "&articleID=" + articleID + "&autorisation=" + this.captcha.autorisation;
 		this.ajax.sendData("index.php", data, (response) => 
-			{	
-				console.log(response);
+		{	
+			if(response === "Ok")
+			{
 				this.displayConfirmPost();
 				setTimeout(() => {
 					window.location.reload();
 					this.captcha.autorisation = "false";
 				}, 2500);
 				localStorage.setItem("contentLastPost", this.contentPost.value);
-			});
+			}
+			else
+			{
+				alert(response);
+			};
+		});
 	};
 
 	reportComment(commentID)

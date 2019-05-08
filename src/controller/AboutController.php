@@ -1,14 +1,12 @@
 <?php 
 namespace App\Src\Controller;
-use App\Src\Framework\View;
+use App\Src\Framework\Controller;
 
-class AboutController
+class AboutController extends Controller
 {
-	private $view;
-
 	public function __construct()
 	{
-		$this->view = new View();
+		parent::__construct();
 	}
 
 	public function about()

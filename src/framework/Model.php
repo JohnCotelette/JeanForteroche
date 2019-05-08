@@ -1,10 +1,10 @@
 <?php
-namespace App\Src\Model;
+namespace App\Src\Framework;
 use App\Src\Framework\Database;
 
-class Model
+abstract class Model
 {
-	public $dataBase;
+	protected $dataBase;
 
 	public function __construct(Database $item)
 	{

@@ -1,20 +1,25 @@
 <?php 
 namespace App\Src\Controller;
-use App\Src\Framework\View;
+use App\Src\Framework\Controller;
 
-class ErrorController
+class ErrorController extends Controller
 {
-	private $view;
-
 	public function __construct()
 	{
-		$this->view = new View();
+		parent::__construct();
 	}
 
 	public function errorNotFound()
 	{
 		$this->view->addTitle("Erreur, page non trouvée...");
-		$this->view->addCss("404NotFound");
+		$this->view->addCss("error");
 		return $this->view->render("404NotFound", []);
+	}
+
+	public function notAuthorized()
+	{
+		$this->view->addTitle("Erreur, accès non autorisé...");
+		$this->view->addCss("error");
+		return $this->view->render("notAuthorized", []);
 	}
 }

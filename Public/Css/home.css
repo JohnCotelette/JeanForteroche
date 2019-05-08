@@ -7,10 +7,6 @@
 #pageContent
 {
     width: 78%;
-    margin: auto;
-    margin-top: 100px;
-    padding-top: 30px;
-    padding-bottom: 20px;
 }
 
 #showMorePosts
@@ -25,7 +21,6 @@
     color: grey;
     display: block;
     margin: auto;
-    margin-bottom: 25px;
     cursor: pointer;
     letter-spacing: 0.1em;
 }
@@ -218,11 +213,6 @@ h2
     letter-spacing: 0.15em;
 }
 
-#singlePostPageContent
-{
-    min-height: 100vh;
-}
-
 /* ---------------------------------------------------------------------------------------- */
 /* ===> RESPONSIVE SETTINGS <=== */
 
@@ -235,8 +225,6 @@ h2
 	#pageContent
     {
         width: 90%;
-        padding-bottom: 10px;
-        padding-top: 20px;
     }
 
     #lastPostBlog
@@ -332,7 +320,6 @@ h2
 	#pageContent
     {
         width: 85%;
-        padding-bottom: 10px;
     }
 
     #lastPostBlog
@@ -384,7 +371,6 @@ h2
 	#pageContent
     {
         width: 74%;
-        padding-bottom: 10px;
     }
 
     #lastPostBlog
@@ -431,7 +417,6 @@ h2
 	#pageContent
     {
         width: 85%;
-        padding-bottom: 10px;
     }
 
     #rightCLastPost

@@ -4,20 +4,17 @@
 /* Content */
 /* ----------------------------------------*/
 
+#pageContent
+{
+	display: flex;
+}
+
 #errorMessageContainer
 {
-	min-height: 71vh;
-	margin-top: 150px;
-	margin-bottom: 30px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: auto;
 	text-align: center;
-	width: 30%;
 	font-size: 1.3em;
 	line-height: 1.5em;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 }
 
 #homeReturn
@@ -48,13 +45,13 @@
 
 	#errorMessageContainer
 	{
-		width: 90%;
-		min-height: 65vh;
+		width: 80%;
+		font-size: 99%;
 	}
 
 	#oups
 	{
-		padding: 12px;
+		padding: 10px;
 	}
 }
 
@@ -78,6 +75,6 @@
 
 	#errorMessageContainer
 	{
-		width: 50%;
+		width: 70%;
 	}
 }
