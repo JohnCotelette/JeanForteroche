@@ -6,6 +6,8 @@ class Ajax
 {
 	constructor() {};
 
+/* -------------------- POST (classic, json or formData)  -------------------- */
+
 	sendData(url, data, callback, type = null)
 	{
 		var req = new XMLHttpRequest();
@@ -27,5 +29,4 @@ class Ajax
 		};
 		req.send(data);
 	};
-
 };

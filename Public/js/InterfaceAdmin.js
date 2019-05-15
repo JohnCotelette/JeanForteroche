@@ -1,11 +1,12 @@
 /**
- * A class to create an object which can control the admin interface
+ * A class to create an object which can control the admin interface and communicate with the PHP router
  */
 
 class InterfaceAdmin 
 {
 	constructor()
 	{
+		// GLOBALS SELECTORS
 		this.links = document.querySelectorAll(".links");
 		this.controllers = document.querySelectorAll(".sectionTitles");
 		this.smallControllers = document.querySelectorAll(".smallCategories");
@@ -14,30 +15,37 @@ class InterfaceAdmin
 		this.bigArrows = document.querySelectorAll(".bigArrows");
 		this.smallArrows = document.querySelectorAll(".smallArrows");
 
+		// ARTICLESADD FORM SELECTORS
 		this.formAddArticleContainer = document.getElementById("addArticle");
 		this.formAddArticle = document.getElementById("formAddArticle");
 		this.articleButtonsDelete = document.querySelectorAll(".adminButtonsDeleteArticle");
 		this.articlesContainers = document.querySelectorAll(".articles");
 		this.articlesSeparators = document.querySelectorAll(".articlesHr");
 
+		// ARTICLESEDIT FORM SELECTORS
 		this.formEditArticleContainer = document.getElementById("editArticle");
 		this.formEditArticle = document.getElementById("formEditArticle");
 		this.changeModButton = document.getElementById("changeMod");
 		this.articleButtonsEdit = document.querySelectorAll(".adminButtonsEditArticle");
 
+		// COMMENTS SELECTORS
 		this.adminButtonsDeleteComment = document.querySelectorAll(".adminButtonsDeleteComment");
 		this.adminButtonsResetComment = document.querySelectorAll(".adminButtonsComment");
 		this.commentsContainers = document.querySelectorAll(".commentsReported");
 		this.commentsSeparators = document.querySelectorAll(".commentsHr");
 
+		//ADMIN SELECTORS
 		this.formAddAdmin = document.getElementById("addAdmin");
 		this.adminButtonsDelete = document.querySelectorAll(".adminButtonsDelete");
 		this.adminButtonsEdit = document.querySelectorAll(".adminButtonsEdit");
 		this.adminsContainers = document.querySelectorAll(".adminsList");
 		this.adminsSeparators = document.querySelectorAll(".adminsHr");
 
+		// AJAX OBJECT
 		this.ajax = new Ajax;
 	};
+
+/* -------------------- ARTICLES  -------------------- */
 
 	addArticle()
 	{
@@ -50,15 +58,7 @@ class InterfaceAdmin
 				alert(response);
 				if (response === "L'article a bien été ajouté.")
 				{
-					let confirm2 = window.confirm("Actualiser la page pour prendre en compte les changements ?");
-					if (confirm2)
-					{
-						location.reload();
-					}
-					else
-					{
-						return;
-					};
+					this.displayConfirmAlert();
 				}
 				else
 				{
@@ -87,19 +87,10 @@ class InterfaceAdmin
 				alert(response);
 				if (response === "L'article a bien été modifié.")
 				{
-					let confirm2 = window.confirm("Actualiser la page pour prendre en compte les changements ?");
-					if (confirm2)
-					{
-						location.reload();
-					}
-					else
-					{
-						return;
-					};
+					this.displayConfirmAlert();
 				}
 				else
 				{
-					alert(response);
 					return;
 				};
 
@@ -142,6 +133,8 @@ class InterfaceAdmin
 		};
 	};
 
+/* -------------------- COMMENTS  -------------------- */
+
 	deleteComment(commentID, i)
 	{
 		let confirm = window.confirm('Etes vous sur de vouloir supprimer ce commentaire ?\nCette action est irréversible.');
@@ -178,6 +171,8 @@ class InterfaceAdmin
 		};
 	};
 
+/* -------------------- ADMINS  -------------------- */
+
 	addAdmin()
 	{
 		let pseudo = encodeURIComponent(this.formAddAdmin.pseudo.value);
@@ -192,15 +187,7 @@ class InterfaceAdmin
 				alert(response);
 				if (response === "Le nouveau collaborateur a bien été ajouté à la base de données.")
 				{
-					let confirm2 = window.confirm("Actualiser la page pour prendre en compte les changements ?");
-					if (confirm2)
-					{
-						location.reload();
-					}
-					else
-					{
-						return;
-					};
+					this.displayConfirmAlert();
 				}
 				else
 				{
@@ -225,7 +212,7 @@ class InterfaceAdmin
 				alert(response);
 				if (response === "L'admin séléctionné a bien été supprimé de la base de données.")
 				{
-					this.displayConfirmAdmin(i);
+					this.displayConfirmAdminDeleted(i);
 				}
 				else
 				{
@@ -237,6 +224,21 @@ class InterfaceAdmin
 		{
 			return;
 		}
+	};
+
+/* -------------------- DISPLAYS  -------------------- */
+
+	displayConfirmAlert()
+	{
+		let confirmAlert = window.confirm("Actualiser la page pour prendre en compte les changements ?");
+		if (confirmAlert)
+		{
+			location.reload();
+		}
+		else
+		{
+			return;
+		};
 	};
 
 	displayFormEdit()
@@ -265,7 +267,7 @@ class InterfaceAdmin
 		this.commentsSeparators[i].classList.add("invisible");
 	};
 
-	displayConfirmAdmin(i)
+	displayConfirmAdminDeleted(i)
 	{
 		this.adminsContainers[i + 1].classList.add("invisible");
 		this.adminsSeparators[i + 1].classList.add("invisible");
@@ -284,6 +286,8 @@ class InterfaceAdmin
 		this.smallArrows[smallCategory].classList.toggle("fa-sort-up");
 		this.smallArrows[smallCategory].classList.toggle("fa-sort-down");
 	};
+
+/* -------------------- CONTROLS  -------------------- */
 
 	initControls()
 	{

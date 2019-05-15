@@ -13,6 +13,7 @@ use Exception;
 
 class Router 
 {
+	// One page = one controller
 	private $homeController;
 	private $errorController;
 	private $singleArticleController;
@@ -39,7 +40,8 @@ class Router
 	{
 		try
 		{
-			if (!empty($_POST)) // For $_POSTS
+/* ----------------- $_POSTS ----------------- */
+			if (!empty($_POST))
 			{
 				if (isset($_POST["pseudo"]) && isset($_POST["password"]))
 				{
@@ -53,40 +55,49 @@ class Router
 				{
 					$this->singleArticleController->reportComment($_POST["commentID"]);
 				}
-				else if (isset($_SESSION["nameAdminBlog"]) && isset($_POST["cancelReport"]) && $_POST["cancelReport"] == "true")
+/* ----------------- $_POSTS IF ADMIN REQUESTS (GLOBAL) ----------------- */
+				else if (isset($_SESSION["nameAdminBlog"]))
 				{
-					$this->adminController->cancelReportComment($_POST["commentID"]);
-				}
-				else if (isset($_SESSION["nameAdminBlog"]) && isset($_POST["deleteComment"]) && $_POST["deleteComment"] == "true")
-				{
-					$this->adminController->deleteComment($_POST["commentID"]);
-				}
-				else if (isset($_SESSION["nameAdminBlog"]) && $_SESSION["rightsAdminBlog"] > 0 && isset($_POST["newBlogAdminName"]) && isset($_POST["newBlogAdminPassword"]) && isset($_POST["newBlogAdminStatut"]))
-				{
-					$this->adminController->addAdmin($_POST);
-				}
-				else if (isset($_SESSION["nameAdminBlog"]) && $_SESSION["rightsAdminBlog"] > 0 && isset($_POST["deleteAdmin"]) && $_POST["deleteAdmin"] == "true")
-				{
-					$this->adminController->deleteAdmin($_POST);
-				}
-				else if (isset($_SESSION["nameAdminBlog"]) && $_SESSION["rightsAdminBlog"] > 0 && isset($_POST["title"]) && isset($_POST["titleBook"]) && isset($_POST["articleContent"]) && isset($_FILES["picture"]))
-				{
-					$this->adminController->addArticle($_POST, $_FILES);
-				}
-				else if (isset($_SESSION["nameAdminBlog"]) && $_SESSION["rightsAdminBlog"] > 0 && isset($_POST["titleEdit"]) && isset($_POST["titleBookEdit"]) && isset($_POST["articleContentEdit"]) && isset($_FILES["pictureEdit"]))
-				{
-					$this->adminController->editArticle($_POST, $_FILES);
-				}
-				else if (isset($_SESSION["nameAdminBlog"]) && $_SESSION["rightsAdminBlog"] > 0 && isset($_POST["deleteArticle"]) && $_POST["deleteArticle"] == "true")
-				{
-					$this->adminController->deleteArticle($_POST["articleID"]);
-				}
-				else if (isset($_SESSION["nameAdminBlog"]) && $_SESSION["rightsAdminBlog"] > 0 && isset($_POST["requestDataArticle"]) && $_POST["requestDataArticle"] == "true")
-				{
-					$this->adminController->getDataArticle($_POST["articleID"]);
+					if (isset($_POST["cancelReport"]) && $_POST["cancelReport"] == "true")
+					{
+						$this->adminController->cancelReportComment($_POST["commentID"]);
+					}
+					else if (isset($_POST["deleteComment"]) && $_POST["deleteComment"] == "true")
+					{
+						$this->adminController->deleteComment($_POST["commentID"]);
+					}
+/* ----------------- $_POSTS IF ADMIN REQUESTS (ADMINISTRATORS) ----------------- */
+					else if ($_SESSION["rightsAdminBlog"] > 0)
+					{
+						if (isset($_POST["newBlogAdminName"]) && isset($_POST["newBlogAdminPassword"]) && isset($_POST["newBlogAdminStatut"]))
+						{
+							$this->adminController->addAdmin($_POST);
+						}
+						else if (isset($_POST["deleteAdmin"]) && $_POST["deleteAdmin"] == "true")
+						{
+							$this->adminController->deleteAdmin($_POST);
+						}
+						else if (isset($_POST["title"]) && isset($_POST["titleBook"]) && isset($_POST["articleContent"]) && isset($_FILES["picture"]))
+						{
+							$this->adminController->addArticle($_POST, $_FILES);
+						}
+						else if (isset($_POST["titleEdit"]) && isset($_POST["titleBookEdit"]) && isset($_POST["articleContentEdit"]) && isset($_FILES["pictureEdit"]))
+						{
+							$this->adminController->editArticle($_POST, $_FILES);
+						}
+						else if (isset($_POST["deleteArticle"]) && $_POST["deleteArticle"] == "true")
+						{
+							$this->adminController->deleteArticle($_POST["articleID"]);
+						}
+						else if (isset($_POST["requestDataArticle"]) && $_POST["requestDataArticle"] == "true")
+						{
+							$this->adminController->getDataArticle($_POST["articleID"]);
+						}
+					}
 				}
 			}
-			else if (isset($_GET["route"])) // FOR $_GETS
+/* ----------------- $_GET (navigation) ----------------- */
+			else if (isset($_GET["route"]))
 			{
 				if ($_GET["route"] === "singleArticle")
 				{

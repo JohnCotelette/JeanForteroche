@@ -1,4 +1,8 @@
 <?php 
+/**
+ * A class to manage the view (motor)
+ */
+
 namespace App\Src\Framework;
 
 class View
