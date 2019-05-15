@@ -52,7 +52,7 @@ class AdminController extends Controller
 			$newArticleContent = $data["articleContent"];
 			$newArticleAuthor = $_SESSION["nameAdminBlog"];
 			$newArticlePicture = $file["picture"];
-			if (FormattingHelper::countOnlyCharacters($newArticleTitle) > 3 && FormattingHelper::countOnlyCharacters($newArticleTitleBook) > 3 && FormattingHelper::countOnlyCharacters($newArticleContent) > 5)
+			if (FormattingHelper::countOnlyCharacters($newArticleTitle) >= 3 && FormattingHelper::countOnlyCharacters($newArticleTitleBook) >= 3 && FormattingHelper::countOnlyCharacters($newArticleContent) >= 5)
 			{
 				$newArticleTitle = addslashes($newArticleTitle);
 				$newArticleTitleBook = addslashes($newArticleTitleBook);
@@ -109,7 +109,7 @@ class AdminController extends Controller
 			{
 				$articleAuthorEdit = $_SESSION["nameAdminBlog"];
 			}
-			if (FormattingHelper::countOnlyCharacters($articleTitleEdit) > 3 && FormattingHelper::countOnlyCharacters($articleTitleBookEdit) > 3 && FormattingHelper::countOnlyCharacters($articleContentEdit) > 5)
+			if (FormattingHelper::countOnlyCharacters($articleTitleEdit) >= 3 && FormattingHelper::countOnlyCharacters($articleTitleBookEdit) >= 3 && FormattingHelper::countOnlyCharacters($articleContentEdit) >= 5)
 			{
 				$articleTitleEdit = addslashes($articleTitleEdit);
 				$articleTitleBookEdit = addslashes($articleTitleBookEdit);
