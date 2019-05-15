@@ -19,7 +19,7 @@ class HomeController extends Controller
 	{
 		$articles = $this->articleModel->getArticles();
 		$totalArticles = count($articles);
-		$lastArticle = $articles[$totalArticles];
+		$lastArticle = reset($articles);
 		$this->view->addParameters("Blog de Jean Forteroche", "home", "PostsView");
 		return $this->view->render("home", [
 			"articles" => $articles,

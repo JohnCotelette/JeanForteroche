@@ -5,8 +5,14 @@ class View
 {
 	private $file;
 	private $title;
+	private $connectLink;
 	private $css = [];
 	private $scripts = [];
+
+	public function __construct($sessionState)
+	{
+		$this->changeHeader($sessionState);
+	}
 
 	public function addParameters($title, $css, $scripts)
 	{
@@ -52,6 +58,19 @@ class View
 		$this->scripts[] = '<script src="js/' . $file . '.js"></script>';	
 	}
 
+	public function changeHeader($sessionState)
+	{
+		if ($sessionState)
+		{
+			$this->addCSS("headerAdmin");
+			return $this->connectLink = '<li class="menuLinks" id="sign"><a href="index.php?route=disconnect">Se déconnecter</a></li><li id="adminReturnPage"><a href="index.php?route=admin">Retour administration</a></li>';
+		}
+		else
+		{
+			return $this->connectLink = '<li class="menuLinks" id="sign"><a href="index.php?route=signIn">Se connecter</a></li>';
+		}
+	}
+
 	public function render($template, $data = [])
 	{
 		$this->file = "../template/" . $template . ".php";
@@ -60,7 +79,8 @@ class View
 			"title" => $this->title,
 			"css" => $this->css,
 			"scripts" => $this->scripts,
-			"content" => $content
+			"content" => $content,
+			"connectLink" => $this->connectLink
 		]);
 		echo $view;	
 	}

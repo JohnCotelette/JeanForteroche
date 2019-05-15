@@ -74,7 +74,11 @@ class PostAndReportComment
 			let data = "reported=true" + "&commentID=" + commentID;
 			this.ajax.sendData("index.php", data, (response) =>
 			{
-				document.getElementById(commentID).value = "Signalé !"
+				document.getElementById(commentID).value = "Signalé !";
+				setTimeout(() =>
+				{
+					document.getElementById(commentID).style.display = "none";
+				}, 1500);
 			});
 		}
 		else

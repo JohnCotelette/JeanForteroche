@@ -20,5 +20,5 @@
 		<span id="captchaNumber1"></span> plus <span id="captchaNumber2"></span> font :
 		<input type="text" name="captchaResult" id="captchaResult" maxlength="2" />
 	</p>
-	<button id="captchaValidator" class="buttons">Validez le résultat</button>
+	<button id="captchaValidator" class="buttons">Valider le résultat</button>
 </div>

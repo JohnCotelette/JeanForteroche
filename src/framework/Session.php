@@ -25,4 +25,12 @@ class Session
 	{
 		$_SESSION[$key] = $value;
 	}
+
+	static public function checkSession()
+	{
+		if (isset($_SESSION["nameAdminBlog"]))
+		{
+			return true;
+		}
+	}
 }

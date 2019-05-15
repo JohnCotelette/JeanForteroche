@@ -7,6 +7,7 @@ class Article
 	private $titleBook;
 	private $title;
 	private $author;
+	private $modifiedBy;
 	private $datePost;
 	private $content;
 	private $imageLink;
@@ -29,6 +30,11 @@ class Article
 	public function getAuthor()
 	{
 		return $this->author;
+	}
+
+	public function getModifiedBy()
+	{
+		return $this->modifiedBy;
 	}
 
 	public function getDatePost()
@@ -64,6 +70,11 @@ class Article
 	public function setAuthor($author)
 	{
 		$this->author = $author;
+	}
+
+	public function setModifiedBy($modifiedBy)
+	{
+		$this->modifiedBy = $modifiedBy;
 	}
 
 	public function setDatePost($datePost)

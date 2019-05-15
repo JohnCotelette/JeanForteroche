@@ -48,9 +48,11 @@
 
 #rightCLastPost
 {
-    width: 52%;
-    padding-left: 45px;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 20px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -72,9 +74,8 @@
 
 .rightC
 {
-    padding: 25px;
-    margin-left: 20px;
-    margin-right: 20px;
+    width: 90%;
+    margin: auto;
     padding-top: 5px;
     padding-bottom: 30px;
 }
@@ -173,7 +174,7 @@ h2
 {
     font-size: 0.87em;
     overflow: hidden;
-    width: 80%;
+    width: 90%;
     line-height: 1.5em;
     margin-bottom: 1.8em;
 }
@@ -181,7 +182,7 @@ h2
 #contentLastPost
 {
     font-size: 1em;
-    width: 85%;
+    width: 100%;
 }
 
 .showMoreContent
@@ -254,18 +255,14 @@ h2
 
     .rightC
     {
-        padding: 0;
-        padding-bottom: 20px;
-        width: 85%;
+        width: 90%;
         margin: auto;
     }
 
     #rightCLastPost
     {
-        margin: auto;
-        padding: 0;
-        padding-bottom: 20px;
         width: 85%;
+        padding-top: 7px;
     }
 
     .datePosts
@@ -334,10 +331,8 @@ h2
 
     #rightCLastPost
     {
-        padding: 25px;
-        margin-left: 20px;
-        margin-right: 20px;
-        width: 100%;
+        width: 90%;
+        padding-top: 7px;
     }
 
     .postsBlog figure
@@ -385,10 +380,8 @@ h2
 
     #rightCLastPost
     {
-        padding: 25px;
-        margin-left: 20px;
-        margin-right: 20px;
-        width: 100%;
+        width: 90%;
+        padding-top: 7px;
     }
 
     .contentPosts
@@ -428,5 +421,6 @@ h2
     .contentPosts
     {
         line-height: 1.4em;
+        width: 88%;
     }
 }

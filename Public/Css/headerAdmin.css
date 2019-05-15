@@ -1,0 +1,37 @@
+/* ===> SPECIAL SETTINGS FOR HEADER IF AN ADMIN IS CONNECTED <=== */
+/* ----------------------------------------*/
+
+header nav
+{
+	width : 48%;
+}
+
+#adminReturnPage, #sign
+{
+    font-size: 0.7em;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 2px;
+    color: white;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ===> RESPONSIVE SETTINGS <=== */
+
+@media screen and (min-width: 1100px) and (max-width: 1399px)
+{
+	header nav
+    {
+        min-width: 680px;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1650px)
+{
+	header nav
+    {
+        min-width: 680px;
+    }
+}

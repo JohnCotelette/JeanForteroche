@@ -4,11 +4,15 @@
 /* Content */
 /* ----------------------------------------*/
 
+#pageContent
+{
+	width: 75%;
+	overflow: hidden;
+}
+
 #blocAboutTitle
 {
-	margin: auto;
 	margin-bottom: 10px;
-	width: 80%;
 }
 
 #blocAboutTitle h2
@@ -18,12 +22,7 @@
 
 #aboutPageContent
 {
-	width: 78%;
-	margin: auto;
 	background-color: white;
-	padding: 30px;
-	padding-left: 25px;
-	padding-right: 25px;
 	animation: fadeInLeft 0.65s ease-out;
 	-webkit-animation: fadeInLeft 0.65s ease-out;
 }
@@ -31,6 +30,10 @@
 #description
 {
 	display: flex;
+	width: 90%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin: auto;
 }
 
 #text
@@ -78,19 +81,25 @@
 /* Content */
 /* ----------------------------------------*/
 
-	#description
-	{
-		flex-direction: column-reverse;
-	}
-
-	#img, #text
+	#pageContent
 	{
 		width: 90%;
 	}
 
+	#description
+	{
+		flex-direction: column-reverse;
+		width: 85%;
+	}
+
+	#img, #text
+	{
+		width: 100%;
+	}
+
 	#img
 	{
-		margin-bottom: 20px;
+		margin-bottom: 24px;
 	}
 
 	#img figure
@@ -107,18 +116,7 @@
 
 	#aboutPageContent
 	{
-		padding-top: 35px;
-		padding-left: 15px;
-		padding-right: 15px;
-		padding-bottom: 20px;
-		margin-bottom: 35px !important;
-		width: 85%;
-		margin: auto;
-	}
-
-	#text
-	{
-		line-height: 1.5em;
+		padding-bottom: 25px;
 	}
 }
 
@@ -128,14 +126,20 @@
 /* Content */
 /* ----------------------------------------*/
 
+	#pageContent
+	{
+		width: 85%;
+	}
+
 	#description
 	{
 		flex-direction: column-reverse;
+		width: 80%;
 	}
 
 	#img, #text
 	{
-		width: 90%;
+		width: 100%;
 	}
 
 	#img
@@ -150,15 +154,7 @@
 
 	#aboutPageContent
 	{
-		padding: 45px;
 		padding-bottom: 25px;
-		margin-bottom: 50px;
-		width: 70%;
-	}
-
-	#text
-	{
-		line-height: 1.5em;
 	}
 }
 
@@ -171,11 +167,13 @@
 	#description
 	{
 		flex-direction: column-reverse;
+		padding-top: 45px;
+		padding-bottom: 35px;
 	}
 
 	#img, #text
 	{
-		width: 90%;
+		width: 100%;
 	}
 
 	#img
@@ -188,28 +186,13 @@
 		width: 60%;
 	}
 
-	#aboutPageContent
+	#pageContent
 	{
-		padding: 50px;
-		padding-bottom: 25px;
-		margin-bottom: 50px;
-		width: 70%;
+		width: 85%;
 	}
 
-	#text
+	#description
 	{
-		line-height: 1.5em;
-	}
-}
-
-@media screen and (min-width: 1289px) and (max-width: 1400px)
-{
-
-/* Content */
-/* ----------------------------------------*/
-
-	#text
-	{
-		line-height: 1.5em;
+		width: 80%;
 	}
 }

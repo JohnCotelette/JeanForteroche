@@ -34,11 +34,29 @@ class CommentModel extends Model
 		return $comments;
 	}
 
+	public function getReportedComments()
+	{
+		$sql =
+			"SELECT ID, author, dateComment, content, reported
+			FROM comments
+			WHERE reported = 1
+			ORDER BY dateComment DESC";
+		$result = $this->dataBase->createRequest($sql);
+		$reportedComments = [];
+		forEach($result as $row)
+		{
+			$reportedCommentsID = $row["ID"];
+			$reportedComments[$reportedCommentsID] = $this->buildObject($row);
+		}
+		$result->closeCursor();
+		return $reportedComments;
+	}
+
 	public function addComment($author, $content, $article_ID)
 	{
 		$sql =
-		"INSERT INTO comments (author, content, article_ID) 
-		VALUES ('$author', '$content', '$article_ID')";
+			"INSERT INTO comments (author, content, article_ID) 
+			VALUES ('$author', '$content', '$article_ID')";
 		$addComment = $this->dataBase->createRequest($sql);
 	}
 
@@ -47,8 +65,24 @@ class CommentModel extends Model
 		$sql = 
 			"UPDATE comments
 			SET reported = 1
-			WHERE ID = ?
-			";
+			WHERE ID = ?";
 		$reportComment = $this->dataBase->createRequest($sql, [$commentID]);
+	}
+
+	public function cancelReport($commentID)
+	{
+		$sql = 
+			"UPDATE comments
+			SET reported = 0
+			WHERE ID = ?";
+		$cancelReportComment = $this->dataBase->createRequest($sql, [$commentID]);
+	}
+
+	public function deleteComment($commentID)
+	{
+		$sql = 
+			"DELETE FROM comments
+			WHERE ID = ?";
+		$deleteComment = $this->dataBase->createRequest($sql, [$commentID]);
 	}
 }

@@ -6,6 +6,7 @@ class Admin
 	private $ID;
 	private $name;
 	private $password;
+	private $rights;
 
 	public function getID()
 	{
@@ -22,6 +23,11 @@ class Admin
 		return $this->password;
 	}
 
+	public function getRights()
+	{
+		return $this->rights;
+	}
+
 	public function setID($id)
 	{
 		$this->ID = $id;
@@ -35,5 +41,10 @@ class Admin
 	public function setPassword($password)
 	{
 		$this->password = $password;
+	}
+
+	public function setRights($rights)
+	{
+		$this->rights = $rights;
 	}
 }

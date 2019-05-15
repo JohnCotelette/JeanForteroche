@@ -13,6 +13,12 @@ class FormattingHelper
 		return $contentCut;
 	}
 
+	static public function cutExtension($content)
+	{
+		$contentWithoutExt = substr($content, 0, strrpos($content, "."));
+		return $contentWithoutExt;
+	}
+
 	static public function countOnlyCharacters($content)
 	{
 		$contentWithoutRTR = preg_replace("#\n|\t|\r#","", $content);

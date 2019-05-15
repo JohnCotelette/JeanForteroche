@@ -7,7 +7,7 @@ use App\Src\Model\AdminModel;
 use App\Src\Entity\Admin;
 use Exception;
 
-class SignInController extends Controller
+class ConnectionController extends Controller
 {
 	private $adminModel;
 
@@ -31,6 +31,14 @@ class SignInController extends Controller
 		return $this->view->render("signIn", []);
 	}
 
+	public function disconnect()
+	{
+		Session::endSession();
+		$this->view->addTitle("Déconnexion...");
+		$this->view->addCss("disconnect");
+		return $this->view->render("disconnect", []);
+	}
+
 	public function checkConnect($data)
 	{
 		$name = $data["pseudo"];
@@ -41,7 +49,9 @@ class SignInController extends Controller
 			$admin = $this->adminModel->checkAdminIfExist($name);
 			if (password_verify($password, $admin->getPassword()))
 				{
-					Session::customizeSession("name", $name);
+					$rights = $admin->getRights();
+					Session::customizeSession("nameAdminBlog", $name);
+					Session::customizeSession("rightsAdminBlog", $rights);
 					header("Location: index.php?route=admin");
 				}
 				else

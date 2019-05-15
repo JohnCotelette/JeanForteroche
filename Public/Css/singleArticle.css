@@ -4,20 +4,26 @@
 /* Content */
 /* ----------------------------------------*/
 
+#pageContent
+{
+	width: 75%;
+}
+
 #singlePostPageContent
 {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 10px;
-    width: 80%;
+    width: 100%;
 }
 
 #singlePost
 {
 	background-color: white;
-	padding: 28px;
-	padding-left: 45px;
-	padding-right: 45px;
+	width: 90%;
+	margin: auto;
+	padding-top: 28px;
+	padding-bottom: 28px;
 }
 
 #flexAuthorDate
@@ -42,6 +48,12 @@
 {
 	margin: auto;
 	width: 70%;
+}
+
+#blockHeaderSinglePost
+{
+	width: 92%;
+	margin: auto;
 }
 
 #singlePost figure img
@@ -385,6 +397,11 @@ form input, form textarea
 	animation: apparition 1s ease;
 }
 
+aside br
+{
+	display: none;
+}
+
 /* ---------------------------------------------------------------------------------------- */
 /* ===> RESPONSIVE SETTINGS <=== */
 
@@ -393,6 +410,11 @@ form input, form textarea
 
 /* Content */
 /* ----------------------------------------*/
+
+	#pageContent
+	{
+		width: 90%;
+	}
 
 	#chaptersNavblock
 	{
@@ -460,12 +482,6 @@ form input, form textarea
 		width: 85%;
 	}
 
-	#singlePostPageContent
-	{
-		width: 90%;
-		margin-top: 10px;
-	}
-
 	#comments
 	{
 		padding-left: 14px;
@@ -531,6 +547,11 @@ form input, form textarea
 /* Content */
 /* ----------------------------------------*/
 
+	#pageContent
+	{
+		width: 86%;
+	}
+
 	#singlePost figure, #singlePost aside
 	{
 		width: 85%;
@@ -539,11 +560,6 @@ form input, form textarea
 	#commentPost
 	{
 		width: 85%;
-	}
-
-	#singlePostPageContent
-	{
-		width: 90%;
 	}
 
 	#showMoreComments
@@ -563,14 +579,14 @@ form input, form textarea
 /* Content */
 /* ----------------------------------------*/
 
+	#pageContent
+	{
+		width: 86%;
+	}
+
 	#commentPost
 	{
 		width: 70%;
-	}
-
-	#singlePostPageContent
-	{
-		width: 85%;
 	}
 
 	#showMoreComments
@@ -589,6 +605,11 @@ form input, form textarea
 
 /* Content */
 /* ----------------------------------------*/
+
+	#pageContent
+	{
+		width: 86%;
+	}
 
 	#commentPost
 	{

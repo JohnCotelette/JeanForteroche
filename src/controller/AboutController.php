@@ -9,7 +9,7 @@ class AboutController extends Controller
 		parent::__construct();
 	}
 
-	public function about()
+	public function showAbout()
 	{
 		$this->view->addCSS("about");
 		$this->view->addTitle("Blog de Jean Forteroche - A propos");

@@ -1,3 +1,6 @@
+/* ===> SPECIAL SETTINGS FOR DISPLAY THE ERROR MESSAGE IF FAILCONNECT <=== */
+/* ----------------------------------------*/
+
 #error
 {
 	display: block;

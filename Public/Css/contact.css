@@ -1,0 +1,101 @@
+/* ===> ABOUTPAGE SETTINGS <=== */
+/* ----------------------------------------*/
+
+/* Content */
+/* ----------------------------------------*/
+
+#pageContent
+{
+	width: 75%;
+	overflow: hidden;
+}
+
+#description
+{
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 90%;
+	margin: auto;
+}
+
+#blocContactTitle
+{
+	margin-bottom: 10px;
+}
+
+#blocContactTitle h2
+{
+	margin: 0;
+}
+
+#contactPageContent
+{
+	background-color: white;
+	animation: fadeInLeft 0.65s ease-out;
+	-webkit-animation: fadeInLeft 0.65s ease-out;
+}
+
+#text
+{
+	line-height: 1.5em;
+}
+
+.smallTitles
+{
+	text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ===> RESPONSIVE SETTINGS <=== */
+
+@media screen and (max-width: 599px)
+{
+
+/* Content */
+/* ----------------------------------------*/
+
+	#pageContent
+	{
+		width: 90%;
+	}
+
+	#description
+	{
+		width: 85%;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px)
+{
+
+/* Content */
+/* ----------------------------------------*/
+
+	#pageContent
+	{
+		width: 85%;
+	}
+
+	#description
+	{
+		width: 80%;
+	}
+}
+
+@media screen and (min-width: 900px) and (max-width: 1288px)
+{
+
+/* Content */
+/* ----------------------------------------*/
+
+	#pageContent
+	{
+		width: 85%;
+	}
+
+	#description
+	{
+		width: 80%;
+	}
+}

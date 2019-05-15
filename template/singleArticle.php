@@ -9,7 +9,7 @@ use App\Src\Utility\SpecialsDisplays;
 			<div id="flexAuthorDate">
 				<h2><?=htmlspecialchars($article->getAuthor());?></h2>
 				<p class="dateSinglePost">
-					<?=htmlspecialchars(FormattingHelper::getSimplefiedDateConvertedFR($article->getDatePost()));?>
+					<?=FormattingHelper::getSimplefiedDateConvertedFR($article->getDatePost());?>
 				</p>
 			</div>
 			
@@ -22,13 +22,13 @@ use App\Src\Utility\SpecialsDisplays;
 		</figure>
 
 		<aside>
-			<?=nl2br(htmlspecialchars($article->getContent()));?>
+			<?=nl2br($article->getContent());?>
 		</aside>
 	</section>
 
 	<div id="chaptersNavblock">
-		<a class="chaptersNav" id="b1" href="index.php?route=singleArticle&articleID=<?=htmlspecialchars($article->getID() - 1)?>">Chapitre précédent</a>
-		<a class="chaptersNav" id="b2" href="index.php?route=singleArticle&articleID=<?=htmlspecialchars($article->getID() + 1)?>">Chapitre suivant</a>
+		<a class="chaptersNav" id="b1" href="index.php?route=singleArticle&articleID=<?=SpecialsDisplays::articlesNavigator($article->getID(), $articlesID, "left");?>">Chapitre précédent</a>
+		<a class="chaptersNav" id="b2" href="index.php?route=singleArticle&articleID=<?=SpecialsDisplays::articlesNavigator($article->getID(), $articlesID, "right");?>">Chapitre suivant</a>
 	</div>
 
 <?php
@@ -48,16 +48,19 @@ if ($totalComments > 0)
 			<p class="authorsComments">
 				<?=nl2br(htmlspecialchars($comment->getAuthor()));?>
 <?php
-		if ($comment->getReportStatus() == null)
+		if ($comment->getReportStatus() == 0)
 		{
 ?>
 				<input id="<?=$comment->getID();?>" class="report" type="button" value="Signaler" />
+				<p id="<?=$comment->getID();?>" class="invisible">
+					Signalé !
+				</p>
 <?php
 		}
 ?>
 			</p>
 			<p class="datesComments">
-				Posté le <?=htmlspecialchars(FormattingHelper::convertDateToFR($comment->getDateComment()));?>
+				Posté le <?=FormattingHelper::convertDateToFR($comment->getDateComment());?>
 			</p>
 			<p class ="contentComments">
 				<?=nl2br(htmlspecialchars($comment->getContent()));?>
@@ -120,7 +123,7 @@ else
 					<span id="captchaNumber1"></span> plus <span id="captchaNumber2"></span> font :
 					<input type="text" name="captchaResult" id="captchaResult" maxlength="2" />
 				</p>
-				<button id="captchaValidator" class="submit">Validez le résultat</button>
+				<button id="captchaValidator" class="submit">Valider le résultat</button>
 			</div>
 
 			<p id="confirmPostMessage" class="invisible">
@@ -129,5 +132,3 @@ else
 		</div>
 	</section>
 </div>
-
-

@@ -36,14 +36,14 @@
 						<li class="menuLinks" id="home"><a href="index.php">Accueil</a></li>
 						<li class="menuLinks" id="about"><a href="index.php?route=about">A propos de moi</a></li>
 						<li class="menuLinks" id="contact"><a href="index.php?route=contact">Contact</a></li>
-						<li class="menuLinks" id="sign"><a href="index.php?route=signIn">Se connecter</a></li>
+						<?=$connectLink;?>
 						<a href="#" id="exitMobileMenu"><i class="far fa-times-circle"></i></a>
 					</ul>
 				</nav>
 			</header>
 
 				<main id="pageContent">
-					<?=$content?>
+					<?=$content;?>
 				</main>
 
 				<footer id="footer">

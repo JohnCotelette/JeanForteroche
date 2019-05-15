@@ -1,0 +1,784 @@
+/* ===> ADMINPAGE SETTINGS <=== */
+/* ----------------------------------------*/
+
+/* Content */
+/* ----------------------------------------*/
+
+#pageContent
+{
+	width: 74%;
+	margin-top: 158px;
+	animation: apparition 0.5s linear;
+}
+
+.categories, .smallCategories
+{
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	text-transform: uppercase;
+}
+
+.categories
+{
+	font-size: 1.4em;
+	margin-top: 18px;
+	margin-bottom: 18px;
+	font-weight: bold;
+}
+
+.smallCategories
+{
+	font-size: 1em;
+	margin-top: 14px;
+	margin-bottom: 14px;
+}
+
+.bigArrows
+{
+	margin-left: 13px;
+}
+
+.smallArrows
+{
+	margin-left: 9px;
+}
+
+.adminSections
+{
+	margin-bottom: 45px;
+	background-color: white;
+}
+
+.containers, .smallContents
+{
+	transform: scaleY(0);
+    transform-origin: 50% 0;
+    transition: transform 0.2s ease;
+    height: 0;
+}
+
+.sectionTitles
+{
+	background-color: rgb(248, 248, 248);
+}
+
+#adminReturnPage
+{
+	display: none;
+}
+
+header nav
+{
+	width: 35%;
+}
+
+#headerComments, #headerAdmins
+{
+	height: 55px;
+	border-bottom: 1px solid rgb(128, 128, 128);
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#headerComments, .commentsReported, .adminsList, #headerAdmins
+{
+	width: 100%;
+	display: flex;
+	text-align: center;
+	font-size: 0.9em;
+}
+
+#headerComments p, #headerAdmins p
+{
+	margin: auto;
+}
+
+.commentsReported p, .adminsList p
+{
+	margin: auto;
+	padding-top: 35px;
+	padding-bottom: 35px;
+	line-height: 1.4em;
+}
+
+#pDate, .pDate
+{
+	width: 15%;
+}
+
+#pAuthor, .pAuthor
+{
+	width: 15%;
+}
+
+#pContent, .pContent
+{
+	width: 40%;
+	text-align: left;
+	padding-left: 30px;
+}
+
+#pManage, .pManage
+{
+	width: 30%;
+}
+
+#pAdminID, .pAdminID
+{
+	width: 15%;
+}
+
+#pAdminPseudo, .pAdminPseudo
+{
+	width: 25%;
+}
+
+#pAdminRights, .pAdminRights
+{
+	width: 30%;
+}
+
+#pAdminManage, .pAdminManage
+{
+	width: 30%;
+}
+
+hr
+{
+	border-top: 1px solid #8c8b8b;
+	border-bottom: 1px solid #fff;
+	margin: 0;
+}
+
+.buttons
+{
+	padding: 0.4em;
+	padding-right: 1.4em;
+	padding-left: 1.4em;
+	border-radius: 5px;
+	background-color: #435962;
+	color: white;
+	text-transform: uppercase;
+	animation: apparition 0.5s ease-out;
+	cursor: pointer;
+	border: none;
+}
+
+.buttons:hover
+{
+	background-color: black;
+}
+
+#noComments, #errorRights, #noArticles
+{
+	text-align: center;
+	display: block;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 15px;
+}
+
+#pAdminAdd, #addAdmin, .articleAddEdit, .addEditArticle
+{
+	background-color: rgb(250, 250, 250);
+}
+
+#pAdminAdd, .articleAddEdit
+{
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 45px;
+	padding-top: 42px;
+	text-transform: uppercase;
+}
+
+.style
+{
+	font-weight: bold;
+}
+
+#addAdmin label
+{
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+#addAdmin
+{
+	display: flex;
+	justify-content: space-around;
+	padding-bottom: 25px;
+}
+
+#addAdmin p
+{
+	display: flex;
+	flex-direction: column;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.inputsAdmin
+{
+	padding: 5px;
+	min-width: 180px;
+}
+
+#submitAdminContainer
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.pArticlesPicture img
+{
+	width: 200px;
+	height: 100px;
+}
+
+.articles
+{
+	width: 90%;
+	margin: auto;
+	font-size: 0.9em;
+	line-height: 1.4em;
+	display: flex;
+	justify-content: space-around;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.articles p
+{
+	margin: auto;
+	text-align: center;
+	overflow: hidden;
+}
+
+.blocArticlesManage
+{
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+.blocArticlesManage p
+{
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+.pArticlesTitles
+{
+	font-weight: bold;
+}
+
+.far
+{
+	font-size: 1.8em;
+	color: rgba(51, 51, 51, 0.5);
+}
+
+.formulaire
+{
+	width: 85%;
+	margin: auto;
+}
+
+.formulaire p
+{
+	display: flex;
+	flex-direction: column;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.formulaire label
+{
+	margin-bottom: 5px;
+}
+
+.addEditArticlesButton
+{
+	min-width: 100px;
+	max-width: 120px;
+}
+
+.addEditArticle
+{
+	padding-bottom: 20px;
+}
+
+.tox-statusbar
+{
+	display: none !important;
+}
+
+.tox-tinymce
+{
+	min-height: 480px !important;
+}
+
+#submitContainerEdit
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#lastPictureBloc
+{
+	text-transform: uppercase;
+	font-size: 0.6em;
+	margin-top: 10px;
+}
+
+#addArticle, #editArticle
+{
+	animation: apparition 0.8s ease;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ===> RESPONSIVE SETTINGS <=== */
+
+@media screen and (max-width: 599px)
+{
+
+/* Content */
+/* ----------------------------------------*/
+
+	.adminSections
+	{
+		margin-bottom: 30px;
+	}
+
+	#pageContent
+	{
+		width: 92%;
+		margin-top: 135px;
+		margin-bottom: 0;
+	}
+
+	.categories
+	{
+		font-size: 0.95em;
+	}
+
+	.smallCategories
+	{
+		font-size: 0.8em;
+		margin-bottom: 8px;
+	}
+
+	.commentsReported, .adminsList
+	{
+		flex-direction: column;
+		text-align: left;
+		width: 100%;
+		margin-bottom: 18px;
+		padding-top: 18px;
+	}
+
+	.commentsReported p, .adminsList p, #addAdmin p
+	{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		width: 90%;
+		margin: auto;
+		font-size: 0.9em;
+	}
+
+	.pContent
+	{
+		padding-left: 0;
+	}
+
+	.pAuthor, .pAdminPseudo
+	{
+		font-weight: bold;
+		padding-bottom: 5px !important;
+		padding-top: 5px !important;
+	}
+
+	.pDate
+	{
+		padding-bottom: 5px !important;
+	}
+
+	#headerComments, #headerAdmins
+	{
+		display: none;
+	}
+
+	.adminButtonsDeleteComment
+	{
+		margin-right: 10px;
+	}
+
+	#noComments, #errorRights, #noArticles
+	{
+		font-size: 0.88em;
+	}
+
+	#pAdminAdd, .articleAddEdit
+	{
+		font-size: 0.7em;
+		padding-top: 30px;
+		padding-bottom: 20px;
+		padding-left: 6%;
+		padding-right: 6%;
+	}
+
+	#addAdmin label, #pAdminAdd, .articleAddEdit
+	{
+		text-align: left;
+	}
+
+	label
+	{
+		font-size: 0.8em;
+	}
+
+	.inputsAdmin
+	{
+		width: 70%;
+		min-width: 250px;
+	}
+
+	#submitAdminContainer
+	{
+		justify-content: center;
+	}
+
+	#submitAdmin
+	{
+		width: 100px;
+	}
+
+	#addAdmin
+	{
+		width: 100%;
+		flex-direction: column;
+		padding-bottom: 20px;
+	}
+
+	.articles
+	{
+		display: block;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		width: 85%;
+	}
+
+	.articles p
+	{
+		text-align: left;
+		margin-bottom: 16px;
+		font-size: 0.9em;
+	}
+
+	.blocArticlesManage
+	{
+		margin: 0;
+		flex-direction: row;
+	}
+
+	.blocArticlesManage p
+	{
+		margin: inherit;
+		margin-right: 13px;
+	}
+
+	.addEditArticle
+	{
+		padding-bottom: 10px;
+	}
+
+	#changeMod
+	{
+		font-size: 0.6em;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 720px)
+{
+
+/* Content */
+/* ----------------------------------------*/
+	.categories
+	{
+		font-size: 1.3em;
+	}
+
+	.smallCategories
+	{
+		font-size: 0.9em;
+	}
+
+	#pageContent
+	{
+		width: 85%;
+	}
+
+	.commentsReported, .adminsList
+	{
+		flex-direction: column;
+		text-align: left;
+		width: 100%;
+		margin-bottom: 18px;
+		padding-top: 18px;
+	}
+
+	.commentsReported p, .adminsList p, #addAdmin p
+	{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		width: 85%;
+		margin: auto;
+	}
+
+	.pContent
+	{
+		padding-left: 0;
+	}
+
+	.pAuthor, .pAdminPseudo
+	{
+		font-weight: bold;
+		padding-bottom: 5px !important;
+		padding-top: 5px !important;
+	}
+
+	.pDate
+	{
+		padding-bottom: 5px !important;
+	}
+
+	#headerComments, #headerAdmins
+	{
+		display: none;
+	}
+
+	.adminButtonsDeleteComment
+	{
+		margin-right: 10px;
+	}
+
+	#noComments, #errorRights, #noArticles
+	{
+		font-size: 0.90em;
+	}
+
+	#pAdminAdd, .articleAddEdit
+	{
+		font-size: 0.9em;
+		padding-top: 30px;
+		padding-bottom: 20px;
+		padding-left: 7.5%;
+		padding-right: 7.5%;
+	}
+
+	#addAdmin label, #pAdminAdd, .articleAddEdit
+	{
+		text-align: left;
+	}
+
+	label
+	{
+		font-size: 0.9em;
+	}
+
+	.inputsAdmin
+	{
+		width: 70%;
+		min-width: 250px;
+	}
+
+	#submitAdminContainer
+	{
+		justify-content: center;
+	}
+
+	#submitAdmin
+	{
+		width: 100px;
+	}
+
+	#addAdmin
+	{
+		width: 100%;
+		flex-direction: column;
+		padding-bottom: 20px;
+	}
+
+	.articles
+	{
+		display: block;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		width: 85%;
+	}
+
+	.articles p
+	{
+		text-align: left;
+		margin-bottom: 18px;
+	}
+
+	.blocArticlesManage
+	{
+		margin: 0;
+		flex-direction: row;
+	}
+
+	.blocArticlesManage p
+	{
+		margin: inherit;
+		margin-right: 13px;
+	}
+}
+
+@media screen and (min-width: 721px) and (max-width: 1099px)
+{
+
+/* Content */
+/* ----------------------------------------*/
+	
+	#pageContent
+	{
+		width: 85%;
+	}
+
+	.commentsReported, .adminsList
+	{
+		flex-direction: column;
+		text-align: left;
+		width: 100%;
+		margin-bottom: 18px;
+		padding-top: 18px;
+	}
+
+	.commentsReported p, .adminsList p, #addAdmin p
+	{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		width: 85%;
+		margin: auto;
+	}
+
+	.pContent
+	{
+		padding-left: 0;
+	}
+
+	.pAuthor, .pAdminPseudo
+	{
+		font-weight: bold;
+		padding-bottom: 5px !important;
+		padding-top: 5px !important;
+	}
+
+	.pDate
+	{
+		padding-bottom: 5px !important;
+	}
+
+	#headerComments, #headerAdmins
+	{
+		display: none;
+	}
+
+	.adminButtonsDeleteComment
+	{
+		margin-right: 10px;
+	}
+
+	#noComments, #errorRights, #noArticles
+	{
+		font-size: 0.9em;
+	}
+
+	#pAdminAdd, .articleAddEdit
+	{
+		font-size: 0.9em;
+		padding-top: 30px;
+		padding-bottom: 20px;
+		padding-left: 7.5%;
+		padding-right: 7.5%;
+	}
+
+	#addAdmin label, #pAdminAdd, .articleAddEdit
+	{
+		text-align: left;
+	}
+
+	.inputsAdmin
+	{
+		width: 70%;
+		min-width: 250px;
+	}
+
+	#submitAdminContainer
+	{
+		justify-content: center;
+	}
+
+	#submitAdmin
+	{
+		width: 100px;
+	}
+
+	#addAdmin
+	{
+		width: 100%;
+		flex-direction: column;
+		padding-bottom: 20px;
+	}
+
+	.articles
+	{
+		display: block;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		width: 85%;
+	}
+
+	.articles p
+	{
+		text-align: left;
+		margin-bottom: 18px;
+	}
+
+	.blocArticlesManage
+	{
+		margin: 0;
+		flex-direction: row;
+	}
+
+	.blocArticlesManage p
+	{
+		margin: inherit;
+		margin-right: 13px;
+	}
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1399px)
+{
+	header nav
+    {
+        min-width: 520px;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1650px)
+{
+	header nav
+    {
+        min-width: 520px;
+    }
+}
