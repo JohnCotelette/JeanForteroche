@@ -19,8 +19,21 @@
 		}
 		?>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<link rel="icon" type="image/png" href="img/Favicon.png" />
 		<title><?=$title?></title>
 		<meta name="description" content="Retrouvez sur cette page les derniers épisodes de 'Billet simple pour l'Alaska', le dernier roman de JeanForteroche. Pages PHP." />
+<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://www.samueldarras.com/Projet4OP/public/index.php" />
+		<meta property="og:title" content="<?=$title?>">
+		<meta property="og:description" content="Retrouvez sur cette page les derniers épisodes de 'Billet simple pour l'Alaska', le dernier roman de JeanForteroche. Pages PHP." />
+		<meta property="og:image" content="https://www.samueldarras.com/Projet4OP/public/img/jean.jpg" />
+<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://www.samueldarras.com/Projet4OP/public/index.php" />
+		<meta property="twitter:title" content="<?=$title?>" />
+		<meta property="twitter:description" content="Retrouvez sur cette page les derniers épisodes de 'Billet simple pour l'Alaska', le dernier roman de JeanForteroche. Pages PHP." />
+		<meta property="twitter:image" content="https://www.samueldarras.com/Projet4OP/public/img/jean.jpg" />
 	</head>
 
 	<body>
@@ -37,7 +50,7 @@
 						<li class="menuLinks" id="about"><a href="index.php?route=about">A propos de moi</a></li>
 						<li class="menuLinks" id="contact"><a href="index.php?route=contact">Contact</a></li>
 						<?=$connectLink;?>
-						<a href="#" id="exitMobileMenu"><i class="far fa-times-circle"></i></a>
+						<li><a href="#" id="exitMobileMenu"><i class="far fa-times-circle"></i></a></li>
 					</ul>
 				</nav>
 			</header>
@@ -55,7 +68,6 @@
 						<a class="link" href="index.php?route=legals">Mentions légales</a>
 					</div>
 				</footer>
-			</div>
 		</div>
 
 		<?php

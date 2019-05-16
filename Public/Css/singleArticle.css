@@ -461,20 +461,22 @@ aside br
 	{
 		margin-top: 10px;
 		margin-bottom: 22px;
+		font-size: 2em;
 	}
 
 	#singlePost h3
 	{
 		margin-top: 15px;
 		margin-bottom: 10px;
+		font-size: 1.2em;
 	}
 
 	#singlePost aside
 	{
 		margin-top: 25px;
 		margin-bottom: 20px;
-		line-height: 1.38em;
-		font-size: 1em;
+		line-height: 1.4em;
+		font-size: 0.96em;
 	}
 
 	#commentPost

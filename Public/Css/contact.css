@@ -55,6 +55,12 @@
 /* Content */
 /* ----------------------------------------*/
 
+	#text
+    {
+        font-size: 0.96em;
+        line-height: 1.4em;
+    }
+
 	#pageContent
 	{
 		width: 90%;

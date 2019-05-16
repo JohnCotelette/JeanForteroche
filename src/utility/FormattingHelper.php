@@ -7,10 +7,13 @@ class FormattingHelper
 
 	static public function cutTheContentProperly($content)
 	{
-		$content = substr($content, 0, 300);
-		$content = substr($content, 0, strrpos($content, " "));
-		$contentCut = $content . " [...]";
-		return $contentCut;
+		if (strlen($content) >= 600)
+		{
+			$content = substr($content, 0, 300);
+			$content = substr($content, 0, strrpos($content, " "));
+			$content = $content . " [...]";
+		}
+		return $content;
 	}
 
 	static public function cutExtension($content)

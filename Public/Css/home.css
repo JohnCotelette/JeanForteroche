@@ -241,11 +241,14 @@ h2
     #contentLastPost
     {
         width: 100%;
+        font-size: 0.95em;
+        line-height: 1.35em;
     }
 
     #chapCountLastPost
     {
         margin: 0;
+        font-size: 1.6em;
     }
 
     #last
